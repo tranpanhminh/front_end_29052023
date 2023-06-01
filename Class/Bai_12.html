@@ -8,7 +8,7 @@
     <title>Bài tổng hợp</title>
 </head>
     <style>
-        .btn {
+        .btn, .btn-2 {
             background-color: #2ecc71;
             border-color: #2ecc71;
             border-radius:3px;
@@ -21,6 +21,47 @@
         .text {
             
         }
+        
+        .btn-3 {
+            background-color: #3498db;
+            border-color: #3498db;
+            border-radius:3px;
+            border:0;
+            padding: 5px 8px;
+            color: white;
+            font-size: 10px;
+            font-weight: 100;
+        }
+
+        .dashboard {
+            display: inline-block;
+            width:50%;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 2px 1px 2px #ccc;
+            padding-bottom: 10px;
+        }
+
+        .task {
+            width: 25%;
+            display: inline-block;
+            margin-left: 23px;
+        }
+
+        .status {
+            width: 50%;
+            display: inline-block;
+            float: right;
+            padding-top: 12px;
+        }
+
+        .total {
+            display: inline-block;
+        }
+
+        .line {
+            width: 220px;
+        }
     </style>
 
 <body>
@@ -30,6 +71,31 @@
         <input class=text type="text" name="Thêm công việc mới" placeholder="Thêm công việc mới...">
         <input class="btn" type="submit" value="Thêm" />
     </form>
+    <div class="line"><hr></div>
+    <div class="total">
+        <div class="dashboard">
+            <div class="task">
+                <p>Đi chợ</p>
+            </div>
+
+            <div class="status">
+                <button class="btn-2">Hoàn thành</button>
+                <button class="btn-3">Xóa</button>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <div class="task">
+                <p>Đi bơi</p>
+            </div>
+
+            <div class="status">
+                <button class="btn-2">Hoàn thành</button>
+                <button class="btn-3">Xóa</button>
+            </div>
+        </div>
+    </div>
+    <br>
     <br>
     <br>
     <a href="../index.html"><button>Back To Home</button></a>
