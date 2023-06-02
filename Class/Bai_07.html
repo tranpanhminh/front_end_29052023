@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Bài tập về các thẻ table và form</title>
+</head>
+<style>
+    .title {
+        font-style: italic;
+        padding-left: 250px;
+    }
+
+    img {
+        border-radius: 30px;
+    }
+
+    thead,
+    tbody {
+        text-align: center;
+    }
+
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <h1>Bài 7: [Bài tập] Bài tập về các thẻ table và form</h1>
+    <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=markdown/1683529143_kX6q021QlMb2BVRd.png -->
+    <h2>Phần 1: Luyện tập các thẻ table, form, input, tr, th, td</h2>
+    <h3 class="title">My Store</h3>
+    <table border="1" cellpadding="20">
+        <thead>
+            <tr>
+                <td>Item Photo</td>
+                <td>Name</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg" alt="Orange" width="300">
+                </td>
+                <td>Oranges</td>
+                <td>$1 ea.</td>
+            </tr>
+            <tr>
+                <td><img src="" alt="Error"></td>
+                <td>Bananas</td>
+                <td>$0.75/lb</td>
+            </tr>
+            <tr>
+                <td><img src="https://ritana.com.vn/files/image/3897-tac-dung-cua-qua-luu-1.jpg" alt="Pomegranates"
+                        width="300">
+                </td>
+                <td>Pomegranates</td>
+                <td>3 for $5</td>
+            </tr>
+            <tr>
+                <td><img src="" alt="Error"></td>
+                <td>Gummy Bears</td>
+                <td>$6 per bag</td>
+            </tr>
+            <tr>
+                <td><img src="https://photo-cms-tpo.epicdn.me/w890/Uploaded/2023/rwbvhvobvvimsb/2021_10_30/cong-dung-cua-sup-lo-1530083398589259328742-2333.jpg"
+                        alt="Broccoli" width="300"></td>
+                <td>Broccoli</td>
+                <td>$3 a head</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <h2>Phần 2: Hãy tạo một form đặt phòng khách sạn</h2>
+    <form action="https://google.com/">
+        <h3>Booking Form</h3>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="" required> <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email"> <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone"> <br>
+        <label for="date">Date:</label>
+        <input type="date" id="date"> <br>
+        <label for="time">Time</label>
+        <input type="time"> <br>
+        <label for="guests">Number of Guests</label>
+        <input type="number" min="0" id="guests"> <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <h2>Phần 3: Tạo form mua xe</h2>
+    <h3>Car Purchase Form</h3>
+    <form action="https://google.com/">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="" required> <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email"> <br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone"> <br>
+        <label for="car">Choose a Car:</label>
+        <select name="" id="">
+            <option value="model1">Model 1</option>
+            <option value="model2">Model 2</option>
+            <option value="model3">Model 3</option>
+        </select>
+        <label for="car">Choose a Color:</label>
+        <select name="" id="">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="yello">Yello</option>
+        </select>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="0"> <br>
+        <label for="delivery_date">Delivery Date:</label>
+        <input type="date" id="delivery_date">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
