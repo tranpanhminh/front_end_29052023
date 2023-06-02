@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,12 +11,14 @@
     .table-1 tr:nth-child(odd) td:nth-child(even) {
         background: black;
     }
+
     .table-1 tr:nth-child(even) td:nth-child(odd) {
         background-color: black;
     }
+
     .table-1 th {
         background-color: yellow;
-    }  
+    }
 
     .table-1 {
         border-collapse: collapse;
@@ -24,41 +27,58 @@
 
     .table-2 th:nth-child(1) {
         background-color: red;
-        color:white;
+        color: white;
     }
 
     .table-2 th:nth-child(1n+2) {
         background-color: orange;
-        color:white;
+        color: white;
     }
 
     .table-2 th:last-child {
         background-color: blue;
-        color:white;
+        color: white;
     }
 
-    .table-2 .td-1, .tdn {
-        color:red;
+    .table-2 .td-1,
+    .tdn {
+        color: red;
     }
 
     .table-2 .td-7 {
-        color:blue;
+        color: blue;
     }
 
     .table-2 td:nth-child(1) span {
         color: red;
     }
-    
-    .table-2 td:last-child span, .title {
-        color:blue;
+
+    .table-2 td:last-child span,
+    .title {
+        color: blue;
+    }
+
+    .table-2 tr:nth-child(n+3) td {
+        border: 1px solid black;
+    }
+
+    .table-2 tr:nth-child(1) th {
+        border: 1px solid;
+    }
+
+    .table-2,
+    td,
+    tr {
+        border-collapse: collapse;
     }
 </style>
+
 <body>
     <h1>Bài 6: [Bài tập] Tạo bảng nâng cao</h1>
     <h2>Phần 1: Hãy tạo hình một bàn cờ vua như sau</h2>
     <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=materials/1679967607_h39RWaHI3tsXFX51.png -->
     <section class="ban-co-vua">
-        <table class="table-1" border="1"  cellpadding="20">
+        <table class="table-1" border="1" cellpadding="20">
             <tr>
                 <th></th>
                 <th>1</th>
@@ -68,7 +88,7 @@
                 <th>5</th>
                 <th>6</th>
                 <th>7</th>
-                <th>8</th>                 
+                <th>8</th>
             </tr>
             <tr>
                 <th>A</th>
@@ -160,9 +180,9 @@
             </tr>
         </table>
     </section>
-<br>
-<br>
-<hr>
+    <br>
+    <br>
+    <hr>
     <h2>Phần 2: Hãy tạo lịch của một tháng như sau</h2>
     <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=materials/1679967666_j95Tm5l87SrleLWN.png -->
     <h3 class="title" style="padding-left: 200px;">Tháng 10 - October</h3>
@@ -231,5 +251,8 @@
             <td><span>31</span><sub>14</sub></td>
         </tr>
     </table>
+    <br>
+    <br>
 </body>
+
 </html>
