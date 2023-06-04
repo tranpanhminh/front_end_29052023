@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: Luyện tập với CSS3</title>
+</head>
+<style>
+    body {
+        zoom: 100%;
+    }
+
+    button {
+        border-top: 2px #fe0a0a solid;
+        border-left: 8px groove #8e0082;
+        border-right: 4px #5d00ff dashed;
+        border-bottom: 6px #008e00 double;
+    }
+
+    img {
+        box-shadow: 10px 10px 20px #b5b5b5;
+    }
+
+    .container {
+        width: 400px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #F5F5F5;
+    }
+
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        transform: rotate(0);
+        transition: transform 0.5s ease;
+    }
+
+
+    .box:hover {
+        transform: rotate(360deg);
+        animation: pulse 0.5s infinite;
+    }
+
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+        }
+
+        70% {
+            box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+        }
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+
+    .container2 {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+    }
+
+
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+
+    .content {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+
+    .image {
+        position: absolute;
+        top: 100px;
+        right: 50px;
+        width: 300px;
+        height: 200px;
+        background-image: url('https://picsum.photos/300/200');
+        background-size: cover;
+        background-position: center;
+        border: 5px solid #333;
+    }
+</style>
+
+<body>
+    <h2>Bài 1: Luyện tập với CSS3</h2>
+    <!-- Link ảnh: https://api.rikkeiacademy.com/api/get-file-content?file_path=markdown/1683521011_hSvmgO2seumrDK1z.png -->
+    <div class="btn">
+        <button>Submit</button>
+    </div>
+    <br>
+    <hr><br>
+
+    <h2>Bài 2: Tạo BOX-SHADOW cho thẻ img</h2>
+    <!-- Link ảnh: https://api.rikkeiacademy.com/api/get-file-content?file_path=markdown/1683521082_Ua7sMS5scOZQrnyx.png -->
+    <img src="https://f4.bcbits.com/img/a1009271896_16.jpg" alt="Ảnh" width="100px">
+    <br>
+    <hr><br>
+
+    <h2>Bài 3: Tạo một hoạt ảnh xoay vòng 360deg</h2>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <br>
+    <hr><br>
+
+    <h2>Bài 4: Tạo một trang HTML đơn giản với một số phần tử bên trong, bao gồm một tiêu đề, một đoạn văn bản và một
+        hình ảnh.</h2>
+    <div class="container2">
+        <h1>Position Exercise</h1>
+        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ex quis enim hendrerit
+            sodales. Vestibulum
+            ante
+            ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis euismod, nulla vel convallis
+            posuere,
+            ipsum sapien euismod enim, non convallis odio eros sit amet nibh.</p>
+        <div class="image"></div>
+    </div>
+</body>
+
+</html>
