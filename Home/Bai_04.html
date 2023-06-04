@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 4: [Bài đọc] CSS Animation
+    </title>
+</head>
+<style>
+    #test {
+        background-color: green;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        left: 0px;
+        animation-name: move_infinite;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes move_infinite {
+        0% {
+            left: 0px;
+        }
+
+        100% {
+            left: 500px;
+        }
+
+        0% {
+            left: 0px;
+        }
+
+    }
+</style>
+
+<body>
+    <h1>Bài 4: [Bài đọc] CSS Animation</h1>
+    <div id="test"></div>
+
+</body>
+
+</html>
