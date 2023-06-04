@@ -1,0 +1,45 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+main {
+    zoom: 150%;
+}
+
+h1 {
+    font-size: 20px;
+    padding: 20px 15px 10px;
+}
+
+.form-lien-he {
+    width: 240px;
+}
+
+.form-name, .form-email, .form-message {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.formfield {
+    padding: 5px 25px;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    width: 100%;
+    padding: 10px 25px;
+    background-color: #00bf4a;
+    color: white;
+    border-style: ridge;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    width:80%;
+    margin-left:24px;
+    opacity: 80%;
+}

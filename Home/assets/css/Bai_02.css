@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    zoom:150%;
+}
+
+.tieu-de {
+    background-color: #333333;
+}
+
+.tieu-de .title {
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.main-menu {
+    background-color: #dddddd;
+}
+
+.menu {
+    text-align:center;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #686868;
+    padding: 0 10px;
+}
+
+li {
+    display: inline-block;
+}
