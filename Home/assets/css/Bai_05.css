@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.title , .content , .btn{
+    margin: 15px;
+}
+
+
+.btn {
+    background-color: #2d3032;
+    color:#cbcccc;
+    padding: 7px 20px;
+    border: 1px ridge #cbcccc;
+    border-radius: 3px;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn-1 {
+    margin-right: 10px;
+}
+
+.btn-2 {
+    margin-left: 10px;
+}

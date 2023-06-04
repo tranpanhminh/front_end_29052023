@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    width: 300px;
+}
+
+h2 {
+    padding: 20px;
+}
+
+.form-dang-ky-tai-khoan {
+    margin: 20px 5px;
+}
+
+.formfield, button {
+    margin: 15px 10px;
+}
+
+.form-name, .form-email, .form-password {
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background-color: #0087bd;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: white;
+    font-weight: thin;
+}
