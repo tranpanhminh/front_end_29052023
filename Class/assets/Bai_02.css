@@ -1,0 +1,19 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.form-dkhv {
+    width:270px;
+    background-color: #fffdab;
+}
+
+thead {
+    width: 100%;
+    background-color: #d5fdd7;
+}
+
+table {
+    padding: 5px;
+}
