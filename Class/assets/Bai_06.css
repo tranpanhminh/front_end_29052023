@@ -1,0 +1,56 @@
+.table-1 tr:nth-child(odd) td:nth-child(even) {
+    background: black;
+}
+
+.table-1 tr:nth-child(even) td:nth-child(odd) {
+    background-color: black;
+}
+
+.table-1 th {
+    background-color: yellow;
+}
+
+.table-1 {
+    border-collapse: collapse;
+}
+
+/* Table 2 */
+
+.table-2 th:nth-child(1) {
+    background-color: red;
+    color: white;
+}
+
+.table-2 th:nth-child(n+2) {
+    background-color: orange;
+    color: white;
+}
+
+.table-2 th:last-child {
+    background-color: blue;
+    color: white;
+}
+
+
+.table-2 td:nth-child(1) span {
+    color: red;
+}
+
+.table-2 td:last-child span,
+.title {
+    color: blue;
+}
+
+.table-2 tr:nth-child(n+3) td {
+    border: 1px solid black;
+}
+
+.table-2 tr:nth-child(1) th {
+    border: 1px solid;
+}
+
+.table-2,
+td,
+tr {
+    border-collapse: collapse;
+}

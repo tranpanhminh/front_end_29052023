@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/Bai_05.css">
     <title>[Bài tập] Tạo bảng đơn giản</title>
 </head>
+
 <body>
     <h1>Bài 5: [Bài tập] Tạo bảng đơn giản</h1>
     <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=materials/1679967133_m9PGn7DT20j0QGV1.png -->
@@ -27,63 +30,74 @@
             <td>CF - T1.L1</td>
         </tr>
     </table>
-<br>
-<hr>
+    <br>
+    <hr>
     <h2>Phần 2: Hãy cập nhật thời khóa biểu ở phần trước để được kết quả như sau:</h2>
     <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=materials/1679967175_6cwGML4WFyYr5Q5R.png -->
-    <header><h3>THỜI KHÓA BIỂ</h3></header>
-    <section class="thong-tin-lop">
-        <section class="lop">
-            <span>Lớp: T0025</span>
-            <span>Giảng viên: KhoaPV</span>
-            <span>Phòng học: 503</span>
-        </section>
-
-        <section class="thoi-gian-hoc">
-            <span>Thời gian học: 13h30 - 17h30</span>
-            Ngày học: Thứ 3,5,7
-        </section>
-    </section>
-
+    <header>
+        <h3>THỜI KHÓA BIỂU</h3>
+    </header>
     <section class="thoi-khoa-bieu">
-        <table border="1">
-            <tr>
-                <th colspan="3"></th>
-                <th>Thứ 3</th>
-                <th>Thứ 5</th>
-                <th>Thứ 7</th>
-            </tr>
-            <tr>
-                <th>Tuần</th>
-                <th>Ngày bắt đầu</th>
-                <th>Ngày kết thúc</th>
-                <th colspan="3">Môn học</th>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>15/06/2023</td>
-                <td>20/06/2023</td>
-                <td>CF - T1.L1</td>
-                <td>CF - V2.L2</td>
-                <td>CF - T3.L3</td>
-            </tr>
-            <tr>
-                <td>02</td>
-                <td>21/06/2023</td>
-                <td>25/06/2023</td>
-                <td>CF - T1.L1</td>
-                <td>CF - V2.L2</td>
-                <td>CF - T3.L3</td>
-            </tr>
-            <tr>
-                <td>03</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+        <table class="timetable" cellpadding="10">
+            <thead>
+                <tr>
+                    <td colspan="3">Lớp: T0025</td>
+                    <td colspan="3">Thời gian học: 13h30 - 17h30</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">Giảng viên: KhoaPV</td>
+                    <td colspan="3">Ngày học: Thứ 3,5,7</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">Phòng học: 503</td>
+                    <td colspan="3"></td>
+                </tr>
+            </thead>
+
+            <tbody class="timetable-body">
+                <tr>
+                    <th colspan="3"></th>
+                    <th>Thứ 3</th>
+                    <th>Thứ 5</th>
+                    <th>Thứ 7</th>
+                </tr>
+                <tr>
+                    <th>Tuần</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th colspan="3">Môn học</th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>15/06/2023</td>
+                    <td>20/06/2023</td>
+                    <td>CF - T1.L1</td>
+                    <td>CF - V2.L2</td>
+                    <td>CF - T3.L3</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>21/06/2023</td>
+                    <td>25/06/2023</td>
+                    <td>CF - T1.L1</td>
+                    <td>CF - V2.L2</td>
+                    <td>CF - T3.L3</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
         </table>
     </section>
+    <br>
+    <br>
 </body>
+
 </html>

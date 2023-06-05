@@ -1,0 +1,27 @@
+.timetable tbody th, .timetable tbody tr, .timetable tbody td {
+    border: 1px ridge black;
+}
+
+.timetable-tbody tr , th, td{
+    border-collapse: collapse;
+}
+
+.timetable {
+    border-collapse: collapse;
+}
+
+.timetable thead td {
+    color:blue;
+}
+.timetable thead td:nth-child(2) {
+    text-align: right;
+
+}
+
+tbody tr:nth-child(1) th:nth-child(2), tbody tr:nth-child(1) th:nth-child(3), tbody tr:nth-child(1) th:nth-child(4) {
+    background-color: yellow;
+}
+
+tbody tr:nth-child(2) {
+    background-color: orange;
+}
