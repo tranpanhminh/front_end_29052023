@@ -1,0 +1,14 @@
+h1 {
+    text-align: center;
+  }
+
+body {
+    margin:0 400px;
+}
+
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
