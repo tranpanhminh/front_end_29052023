@@ -1,0 +1,58 @@
+.bai-lam li {
+    list-style-type: none;
+    background-color: #ccc;
+    width:300px;
+    margin: 5px 5px;    
+    padding: 10px 10px;
+    color:white;
+    
+}
+
+.bai-lam li:hover {
+    background-color: #666666;
+    color: white;
+}
+
+.bai-lam a {
+    text-decoration: none;
+}
+
+.bai-lam ul {
+    border: 1px solid black;
+    width: 380px;
+    margin-left:25px
+}
+
+
+/*  */
+
+.loi-giai ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   }
+   
+   
+   .loi-giai   li {
+    margin: 10px 0;
+   }
+   
+   
+   .loi-giai a {
+    display: block;
+    padding: 10px;
+    background-color: #c1c1c1;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+   }
+   
+   
+   .loi-giai a:hover {
+    background-color: #666;
+   }
+   
+   
+   .loi-giai a:active {
+    color: #fff;
+   }
