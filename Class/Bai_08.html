@@ -14,30 +14,37 @@
     <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=markdown/1683530374_FN65U9ZF0117YeFg.png -->
     <form action="">
         <section class="san-pham">
-            <h3>Thông tin sản phẩm</h3>
-            <label for="ten_san_pham">Tên sản phẩm:</label>
-            <input type="text" id="ten_san_pham">
-            <label for="quantity">Số lượng:</label>
-            <input type="number" min="0" id="quantity">
+            <fieldset>
+                <legend>Thông tin sản phẩm</legend>
+                <label for="ten_san_pham">Tên sản phẩm:</label>
+                <input type="text" id="ten_san_pham">
+                <label for="quantity">Số lượng:</label>
+                <input type="number" min="0" id="quantity">
+            </fieldset>
         </section>
+
         <section class="thong-tin-giao-hang">
-            <h3>Thông tin giao hàng</h3>
-            <label for="name">Họ và tên:</label>
-            <input type="text" id="name">
-            <label for="email">Email:</label>
-            <input type="email" id="email">
-            <label for="phone">Số điện thoại:</label>
-            <input type="tel" id="phone">
-            <label for="address">Địa chỉ:</label>
-            <textarea name="" id="" cols="20" rows="1"></textarea>
+            <fieldset>
+                <legend>Thông tin giao hàng</legend>
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email">
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone">
+                <label for="address">Địa chỉ:</label>
+                <textarea name="" id="" cols="20" rows="1"></textarea>
+            </fieldset>
         </section>
 
         <section class="thanh-toan">
-            <label for="checkout">Phương thức thanh toán:</label>
-            <select name="payment_method" id="payment_method">
-                <option value="COD">Thanh toán khi nhận hàng</option>
-                <option value="CK">Chuyển khoản</option>
-            </select>
+            <fieldset>
+                <legend>Phương thức thanh toán:</legend>
+                <select name="payment_method" id="payment_method">
+                    <option value="COD">Thanh toán khi nhận hàng</option>
+                    <option value="CK">Chuyển khoản</option>
+                </select>
+            </fieldset>
         </section>
         <input type="submit" value="Đặt hàng">
     </form>
