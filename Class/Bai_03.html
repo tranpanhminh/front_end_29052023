@@ -70,8 +70,21 @@
 
         <div>
             <h4>What would you pay for the new product?</h4>
-            $ <input type="number" name="dollars" min="0"><label for="dollars">Dollars</label>.<input type="number"
-                id="cents" min="0"> <label for="cents">Cents</label>
+            <table>
+                <tr>
+                    <td>$</td>
+                    <td><input type="number" name="dollars" min="0"></td>
+                    <td>.</td>
+                    <td><input type="number" id="cents" min="0"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><label for="dollars">Dollars</label></td>
+                    <td></td>
+                    <td><label for="cents">Cents</label></td>
+                </tr>
+            </table>
         </div>
 
         <div>
@@ -91,7 +104,7 @@
                 </tr>
                 <tr>
                     <th>Our product are priced fairly.</th>
-                    <td><input type="radio" name="vote" id="a1" value="a1"><br>
+                    <td><input type="radio" name="vote1" id="a1" value="a1"><br>
                         <label for="a1">1</label>
                     </td>
                     <td><input type="radio" name="vote1" id="a2" value="a2"><br>
