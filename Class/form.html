@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+</style>
+
+<body>
+    <form action="">
+        <!-- ThuỘc tính Disabled sẽ làm mất khả năng thao tác đối tượng
+        Readonly là thuộc tính không chỉnh sửa được -->
+        <input type="text" name="id" value="SV01" disabled>
+        <input type="text" name="name" value="Đà Nẵng" readonly>
+        <input type="username">
+        <input type="submit" value="Submit">
+
+        <h2>Chọn màu sắc của bạn</h2>
+        <input type="checkbox" id="red">
+        <label for="red">Màu đỏ</label><br>
+        <input type="checkbox" id="blue">
+        <label for="blue">Màu xanh</label><br>
+        <input type="checkbox" id="yellow">
+        <label for="yellow">Màu vàng</label><br>
+
+        <!-- Radio: name phải cùng giá trị các radio muốn lựa chọn -->
+        <h2>Giới tính của bạn</h2>
+        <input type="radio" id="male" name="gender" value="Nam">
+        <label for="male">Nam</label><br>
+        <input type="radio" id="female" name="gender" value="Nữ">
+        <label for="female">Nữ</label> <br>
+
+        <!-- CHeckbox -->
+        <h2>Loài vật bạn yêu thích</h2>
+        <input type="checkbox" id="cat" name="pet1" value="Cat">
+        <label for="cat">Cat</label><br>
+        <input type="checkbox" id="dog" name="pet2" value="Dog">
+        <label for="dog">Dog</label><br>
+        <input type="checkbox" id="rabbit" name="pet3" value="Rabbit">
+        <label for="rabbit">Rabbit</label><br> <br>
+
+        <!-- Select , Option -->
+        <h2>Đăng ký khóa học</h2>
+        <select name="course" id="">
+            <option value="" selected disabled>Chọn khóa học</option>
+            <option value="Javascript">Javascript</option>
+            <option value="PHP">PHP</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
