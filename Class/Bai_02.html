@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Bài tập] Tạo form đơn giản</title>
 </head>
+
 <body>
     <h2>Bài 1: [Bài tập] Tạo form đơn giản</h2>
     <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=materials/1679891767_PjIfIqMpO0vlLd7k.png -->
@@ -32,8 +34,8 @@
         <input type="submit" value="Gửi thông tin">
         <input type="reset" value="Nhập lại">
     </form>
-<br>
-<hr>
+    <br>
+    <hr>
     <h2>Bài 2: Phần 2: Tạo một form đăng ký học viên với cấu trúc như sau</h2>
     <!-- Link mẫu: https://api.rikkeiacademy.com/api/get-file-content?file_path=materials/1679891796_DUsXEP50Lpv9HcSx.png -->
     <h3>ĐĂNG KÝ HỌC VIÊN</h3>
@@ -42,11 +44,11 @@
     <label for="birthday">Ngày sinh</label>
     <input type="text" id="birthday"> <br>
     <label for="gender">Giới tính</label>
-    <input type="radio" name="gender" id="male" value="male">
+    <input type="radio" name="gender" id="" value="male">
     <label for="male">Nam</label>
-    <input type="radio" name="gender" id="female" value="female">
+    <input type="radio" name="gender" id="" value="female">
     <label for="female">Nữ</label> <br>
-    
+
     <label for="class">Lớp</label>
     <select name="" id="">
         <option value="">--Chọn lớp--</option>
@@ -57,8 +59,78 @@
     <label for="email">Email</label>
     <input type="email" id="email">
     <label for="phone">Điện thoại</label>
-    <input type="tel" id="phone">  <br>
+    <input type="tel" id="phone"> <br>
     <input type="submit" value="Đăng ký">
     <input type="reset" value="Nhập lại">
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 2: Phần 2: Cách 2 làm theo dưới dạng bảng</h2>
+    <form action="htps://google.com.vm/">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6">ĐĂNG KÝ HỌC VIÊN</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><label for="fullName">Họ và tên</label></td>
+                    <td colspan="3"><input type="text"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="dob">Ngày sinh</label></td>
+                    <td colspan="3"><input type="date"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="gender">Giới tính</label></td>
+                    <td colspan="3">
+                        <input type="radio" name="gender" id="male" value="Nam"> <label for="male">Nam</label>
+                        <input type="radio" name="gender" id="female" value="Nữ"> <label for="female">Nữ</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="address">Địa chỉ</label></td>
+                    <td colspan="4"><textarea name="" id="" cols="20" rows="10"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td><label for="class">Lớp</label></td>
+                    <td colspan="2">
+                        <select name="" id="">
+                            <option value="" readonly>--Chọn lớp--</option>
+                            <option value="lopA">Lớp A</option>
+                            <option value="lopB">Lớp B</option>
+                            <option value="lopC">Lớp C</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td colspan="3"><input type="email"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="tel">Điện thoại</label></td>
+                    <td colspan="3" id="tel"><input type="tel"></td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Đăng ký"></td>
+                    <td><input type="reset" value="Nhập lại"></td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </form>
 </body>
+
 </html>
