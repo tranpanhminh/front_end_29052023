@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Session 4: CSS Basic</title>
+</head>
+<!-- CSS Internal -->
+<style>
+    h2 {
+        color: blue;
+    }
+</style>
+
+<body>
+    <header>
+        <!-- CSS Inline -->
+        <h1 style="color:red">Session 04: CSS Basic</h1>
+    </header>
+
+    <main>
+        <h2>Rikkei Academy Đà Nẵng</h2>
+
+        <section>
+            <h3>Các bộ chọn trong CSS</h3>
+            <div class="content">
+                <ul>
+                    <li>Simple Selector: Gồm id, class, tagname</li>
+                    <li>Combinator Selector: Gồm descendant selector (space), child selector (>), adjacent sibling
+                        selector (+), general sibling selector (~)</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="demo-descendant-selector">
+            <h3>Demo descendant selector (space):</h3>
+
+            <div>
+                <p>Paragraph 1 in the div.</p>
+                <p>Paragraph 2 in the div.</p>
+                <section>
+                    <p>Paragraph 3 in the div.</p>
+                </section>
+            </div>
+        </section>
+
+        <section id="demo-child-selector">
+            <h3>Demo child selector (>):</h3>
+
+            <div>
+                <p>Paragraph 1 in the div.</p>
+                <p>Paragraph 2 in the div.</p>
+                <section>
+                    <p>child selector.</p>
+                </section>
+            </div>
+        </section>
+
+        <article>
+            <section class="test">
+                <h3>Hello World</h3>
+            </section>
+
+            <section class="test">
+                <h3>Hello World</h3>
+            </section>
+
+            <section class="test">
+                <h3>Hello World</h3>
+            </section>
+
+            <section class="test">
+                <h3>Hello World</h3>
+            </section>
+        </article>
+
+        <!-- CSS theo mô hình box model -->
+        <button class="btn">Button</button>
+        <br>
+        <hr>
+        <br>
+        <section>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

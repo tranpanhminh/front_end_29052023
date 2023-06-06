@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ffdb39;
+    margin-top: 20px;
+    padding: 0px 20px;
+}
+
+section.section-2>p:first-child {
+    color: blue;
+    padding-bottom: 20px;
+}
+
+section.section-2>p:last-child {
+    color: red;
+}
+
+section {
+    padding: 0px 20px;
+}
+
+section.section-3 {
+    padding: 20px;
+    background-color: #ffffcc;
+}
+
+section.p {
+    padding: 20px;
+}
+
+.mtmb-30 {
+    margin: 30px 0px;
+}
