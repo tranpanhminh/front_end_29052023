@@ -27,15 +27,15 @@ div {
 }
 
 form {
-    width: 450px;
-    height: 500px;
+    width: 440px;
+    height: 420px;
     background-color: white;
     padding-left: 40px;
 }
 
 .btn {
     margin-top: 20px;
-    width: 358px;
+    width: 410px;
     background-color: #8e72c2;
     border: none;
     color: white;
