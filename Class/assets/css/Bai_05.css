@@ -9,21 +9,32 @@ main {
     margin-top: 50px;
 }
 
-.title , .content , .btn{
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title,
+.content,
+.btn {
     margin: 15px;
+}
+
+p {
+    line-height: 1.6;
 }
 
 
 .btn {
     background-color: #2d3032;
-    color:#cbcccc;
-    padding: 7px 20px;
-    border: 1px ridge #cbcccc;
+    color: #cbcccc;
+    padding: 10px 20px;
+    border: none;
     border-radius: 3px;
 }
 
-.btn:hover{
+.btn:hover {
     cursor: pointer;
+    opacity: 80%;
 }
 
 .btn-1 {
@@ -32,4 +43,18 @@ main {
 
 .btn-2 {
     margin-left: 10px;
+}
+
+.card {
+    width: 850px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+    border: 1.5px ridge #ccc;
+    border-radius: 5px;
+    padding: 0 30px;
+}
+
+img {
+    margin-top: 30px;
 }
