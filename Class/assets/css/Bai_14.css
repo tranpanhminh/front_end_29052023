@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 2000px;
+    width: 100%;
+}
+
+.background {
+    background-image: url(https://andersenservices.com/wp-content/uploads/2019/09/Child-studying-in-comfortable-home-1280x854.jpeg);
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    height: 1000px;
+    background-repeat: no-repeat;
+}
+
+/* Hoặc xử lý như sau: */
+/* .background {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(https://andersenservices.com/wp-content/uploads/2019/09/Child-studying-in-comfortable-home-1280x854.jpeg);
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    height: 1000px;
+    background-repeat: no-repeat;
+} */
+
+header {
+    color: white;
+    height: 800px;
+    padding: 50px 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 1000px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+
+h1 {
+    font-size: 50px;
+    line-height: 1.6;
+    vertical-align: center;
+}
+
+.logo {
+    margin-right: 100px;
+}
+
+.main-menu {
+    flex: 1;
+}
+
+.main-menu ul li {
+    list-style-type: none;
+    display: inline-block;
+
+}
+
+.main-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px 35px;
+}
+
+.sub-title {
+    font-weight: 600;
+    color: #23a6f0;
+}
+
+.section-info {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa ngang */
+    align-items: center;
+    /* Căn giữa dọc */
+    align-content: center;
+    text-align: center;
+}
+
+.section-info-inside {
+    width: 500px;
+}
+
+.btn-group {
+    border: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main-menu ul li a {
+    cursor: pointer;
+    padding: 15px 30px;
+}
+
+.main-menu ul li a:hover {
+    background-color: #23a6f0;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-group:hover {
+    padding: 15px 30px;
+    background-color: #23a6f0;
+    color: white;
+    border-radius: 5px;
+}
+
+.mtmb-50 {
+    margin: 50px 0;
+}
+
+.mtmb-20 {
+    margin: 20px 0;
+}
+
+.btn-join-us {
+    background-color: #23a6f0;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-join-us:hover {
+    opacity: 95%;
+}
+
+.sub-description {
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 85%;
+}
+
+.group {
+    padding: 0px 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: -200px;
+}
+
+img {
+    width: 60px;
+}
+
+.group-item {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 20px;
+    padding: 40px;
+    line-height: 1.8;
+    background-color: white;
+}
+
+.group-item:hover {
+    background-color: #23a6f0;
+    color: white;
+}
+
+.group-item:hover hr {
+    border-color: white;
+}
+
+.headline {
+    text-align: left;
+}
+
+hr {
+    width: 50px;
+    font-size: 500px;
+    border-width: 2px;
+    border-color: #f08f8f;
+}
