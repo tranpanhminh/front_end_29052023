@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/BTT_03.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<!-- Link mẫu: https://media.discordapp.net/attachments/1114486810064736316/1115893539289694238/Simplest-Dropdown-Navigation-With-jQuery-CSS.png -->
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar {
+        background-color: #2ca0db;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .navbar>ul>li {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .navbar>ul>li:hover {
+        background-color: #126d9a;
+        cursor: pointer;
+    }
+
+    i {
+        margin-left: 10px;
+    }
+
+    .navbar>ul>li {
+        position: relative;
+    }
+
+    .navbar>ul>li:hover ul {
+        display: block;
+    }
+
+    .navbar>ul>li>ul {
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 0;
+        background-color: #373737;
+        width: 200px;
+        border-bottom: 5px solid #349dce;
+    }
+
+
+    .navbar>ul>li>ul>li {
+        list-style-type: none;
+        padding: 15px;
+        border-bottom: 1px ridge #3f3f3f;
+    }
+
+    .navbar>ul>li>ul>li:last-child {
+        border-bottom: none;
+    }
+
+    .navbar>ul>li>ul>li:hover {
+        background-color: #126d9a;
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Categories<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li><a href="#">Services<i class="fa-solid fa-chevron-down"></i></a>
+                <ul class="subnav">
+                    <li><a href="#">Service One</a></li>
+                    <li><a href="#">Service Two</a></li>
+                    <li><a href="#">Service Three</a></li>
+                    <li><a href="#">Service Four</a></li>
+                    <li><a href="#">Service Five</a></li>
+                    <li><a href="#">Service Six</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

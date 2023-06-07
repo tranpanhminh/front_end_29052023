@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    background-color: #e4f2fd;
+    display: flex;
+    height: 800px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.col-first {
+    width: 300px;
+    margin-left: 60px;
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+.horizontal-line {
+    width: 15px;
+    /* Chiều rộng của đường thẳng */
+    height: 276px;
+    /* Chiều cao của đường thẳng */
+    background-color: #4070f5;
+    /* Màu sắc của đường thẳng */
+    transform: rotate(180deg);
+    /* Xoay đường thẳng 90 độ */
+    float: left;
+    display: inline-block;
+    align-items: center;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.headline {
+    display: inline-block;
+    width: 50%;
+}
+
+h1:first-child {
+    color: #4070f5;
+}
+
+.col-second,
+.col-third {
+    width: 300px;
+    height: 600px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+i {
+    width: 20px;
+    margin-right: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.main-menu li a,
+.logout li a {
+    padding: 15px 15px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    color: #767676;
+}
+
+.main-menu li a:hover,
+.logout li a:hover {
+    color: white;
+    background-color: #4071f2;
+    border-radius: 8px;
+}
+
+.main-menu {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
