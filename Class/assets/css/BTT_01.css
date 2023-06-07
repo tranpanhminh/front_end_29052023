@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* Phần header */
+
+.header {
+    background-color: #dc8e6a;
+    padding: 15px;
+}
+
+.header__top-bar {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.header__group-contact {}
+
+ul li {
+    display: inline-block;
+}
+
+.fa-social {
+    margin-right: 10px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.text-contact {
+    color: #fff;
+}
+
+.header__social-icon {
+    padding-right: 40px;
+}
+
+.header__main-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    align-items: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    padding: 15px 30px;
+    color: #522c26;
+    font-weight: 600;
+    border-radius:5px;
+}
+
+.menu li a:hover {
+    color: white;
+    background-color: #dc8e6a;
+}
+
+.header__logo {}
+
+/* Phần Main Menu */
+
+.menu {}
+
+
+/* Phần Banner */
+
+.banner {
+    width: 100%;
+    height: 800px;
+    background-image: url(https://media.discordapp.net/attachments/1114486810064736316/1115892657835749496/slide-1.jpg?width=1440&height=533);
+    background-size: cover;
+
+}
+
+.banner__about {
+    width: 900px;
+    padding: 100px;
+    height: 100%;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.banner__headline {
+    margin-top: 150px;
+}
+
+.banner__title {}
+
+.banner__description {}
+
+.banner__btn {}
+
+button {
+    background-color: #dc8e6a;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.mtmb-30 {
+    margin: 30px 0px;
+}
+
+h1,
+p, .fa-menu  {
+    color: #502c19;
+}
+
+.fa-menu  {
+    padding-left:10px;
+}
+
+p {
+    font-weight: 700
+}
+
+h2 {
+    font-size: 40px;
+}
