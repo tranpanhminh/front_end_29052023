@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: green;
+}
+
+.tablet,
+.mobile {
+    display: none;
+}
+
+
+
+/* Desktop first --> Phải dùng max width --> TỪ lớn tới nhỏ */
+/* KÍch thước 992px */
+@media screen and (max-width: 992px) {
+    body {
+        background-color: blue;
+    }
+
+    .tablet {
+        display: block;
+    }
+
+    .destop {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-color: purple;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .tablet {
+        display: none;
+    }
+}
+
+
+/* Mobile First -> Min-width -> Từ nhỏ tới lớn */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+}
+
+.item {
+    border: 1px solid #000;
+    height: 200px;
+    width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .item {
+        border: 3px solid;
+        height: 300px;
+    }
+}

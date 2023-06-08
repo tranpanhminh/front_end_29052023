@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 30px;
+        background-color: #eeeeee;
+    }
+
+    .item {
+        font-size: 30px;
+        text-align: center;
+        box-shadow: 3px 3px 8px rgb(63, 60, 60);
+    }
+
+    img {
+        width: 100%;
+        border: 10px solid white;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: 992px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+        <div class="item">
+            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="" />
+        </div>
+    </div>
+</body>
+
+</html>
