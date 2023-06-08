@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+</head>
+<!-- Link mẫu: https://tutorial.techaltum.com/images/css-layout.jpg -->
+<style>
+    body {
+        display: grid;
+        /* grid-template-columns: repeat(3, 1fr); */
+        /* Hoặc grid-template-columns: auto auto auto; */
+        column-gap: 50px;
+        /* Phân chia bố cục cho cột và dòng */
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "aside section section"
+            "footer footer footer";
+    }
+
+
+    body>* {
+        border: 1px solid red;
+    }
+
+    header {
+        /* Đặt tên cho vùng để parent set vị trí */
+        grid-area: header;
+        height: 50px;
+    }
+
+    nav {
+        grid-area: nav;
+        height: 50px;
+    }
+
+    aside {
+        grid-area: aside;
+
+    }
+
+    section {
+        grid-area: section;
+        display: grid;
+        /* Phân chia bố cục chỉ cho cột */
+        /* Làm album, chia các cột */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    footer {
+        grid-area: footer;
+        height: 50px;
+    }
+
+    .card {
+        width: 100%;
+        height: 300px;
+        border: 2px solid green;
+    }
+</style>
+
+<body>
+    <header>Header</header>
+    <nav>Nav</nav>
+    <aside>Aside</aside>
+    <section>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </section>
+    <footer>Footer</footer>
+</body>
+
+</html>
