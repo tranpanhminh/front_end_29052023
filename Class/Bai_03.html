@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bài o3: Luyện tập sử dụng css để tạo hiệu ứng chuyển động.</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        zoom: 500%;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .subnav {
+        width: 100px;
+        height: 60px;
+        background-color: blanchedalmond;
+        position: absolute;
+        display: none;
+
+    }
+
+    .btn {
+        cursor: pointer;
+        display: inline;
+    }
+
+    .btn:active .subnav {
+        cursor: pointer;
+        display: block;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="btn"><i class="fa-solid fa-bars"></i>
+                <div class="subnav">
+                    <ul>
+                        <li><a href="#"></a>Home</li>
+                        <li><a href="#"></a>About</li>
+                        <li><a href="#"></a>Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>

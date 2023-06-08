@@ -13,9 +13,12 @@ main {
     display: flex;
     height: 800px;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
+.col-group {
+    display: flex;
+}
 
 .col-first {
     width: 300px;
@@ -27,15 +30,13 @@ main {
 .horizontal-line {
     width: 15px;
     /* Chiều rộng của đường thẳng */
-    height: 276px;
+    height: 380px;
     /* Chiều cao của đường thẳng */
     background-color: #4070f5;
     /* Màu sắc của đường thẳng */
     transform: rotate(180deg);
     /* Xoay đường thẳng 90 độ */
     float: left;
-    display: inline-block;
-    align-items: center;
     margin-right: 30px;
     border-radius: 10px;
 }
@@ -49,6 +50,10 @@ h1:first-child {
     color: #4070f5;
 }
 
+h1 {
+    font-size: 110px;
+}
+
 .col-second,
 .col-third {
     width: 300px;
@@ -57,6 +62,14 @@ h1:first-child {
     border-radius: 8px;
     padding: 30px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.col-second {
+    margin-left:250px;
+}
+
+.col-third {
+    margin-left:40px;
 }
 
 .logo {
