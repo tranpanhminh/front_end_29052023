@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành sử dụng các loại console hiển thị thông báo trong trình duyệt web.</title>
+</head>
+
+<body>
+    <!--  
+ ● console.log
+ ● console.error
+ ● console.warn
+ ● console.clear
+ ● console.time
+ ● console.timeEnd
+ ● console.table
+ ● console.count
+ ● console.group
+ ● console.groupEnd 
+-->
+    <h2>Bài 1: console.log</h2>
+    <button onclick="myFunction()">Click me</button>
+    <script>
+        function myFunction() {
+            console.log("Hello World");
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 2: console.error</h2>
+    <button onclick="myFunction2()">Click me</button>
+    <script>
+        function myFunction2() {
+            console.error("Hello World");
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 3: console.warn</h2>
+    <button onclick="myFunction3()">Click me</button>
+    <script>
+        function myFunction3() {
+            console.warn("Hello World");
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 4: console.clear</h2>
+    <button onclick="myFunction4()">Click me</button>
+    <script>
+        function myFunction4() {
+            console.clear();
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 5, 6: console.time và onsole.timeEnd</h2>
+    <button onclick="myFunction5()">Click me</button>
+    <script>
+        function myFunction5() {
+            console.time('Thời gian xử lý');
+            // Các đoạn mã cần đo thời gian thực thi
+            console.timeEnd('Thời gian xử lý');
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 7: console.table</h2>
+    <button onclick="myFunction7()">Click me</button>
+    <script>
+        function myFunction7() {
+            const data = [
+                { id: 1, name: 'John' },
+                { id: 2, name: 'Jane' },
+                { id: 3, name: 'Doe' }
+            ];
+            console.table(data);
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 8: console.count</h2>
+    <button onclick="myFunction8()">Click me</button>
+    <script>
+        function myFunction8() {
+            console.count('Click');
+            console.count('Click');
+            console.count('Click');
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+    <h2>Bài 9, 10: console.group và console.groupEnd</h2>
+    <button onclick="myFunction9()">Click me</button>
+    <script>
+        function myFunction9() {
+            console.group('Group 1');
+            console.log('Thông báo 1');
+            console.log('Thông báo 2');
+            console.groupEnd();
+
+            console.group('Group 2');
+            console.log('Thông báo 3');
+            console.log('Thông báo 4');
+            console.groupEnd();
+        }
+    </script>
+    <br>
+    <hr>
+    <br>
+</body>
+
+</html>
