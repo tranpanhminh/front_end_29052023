@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1: [Bài tập] Biến, kiểu dữ liệu và toán tử </title>
+</head>
+
+<body>
+    <h2>Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị
+        điểm trung bình và tổng của những điểm này.</h2>
+    <p>Tính điểm trung bình cộng và tổng</p>
+    <button onclick="myFunction()">Click me</button>
+    <script>
+        function myFunction() {
+            var x = parseInt(prompt('Nhập điểm Vật Lý'));
+            var y = parseInt(prompt('Nhập điểm Hóa Học'));
+            var z = parseInt(prompt('Nhập điểm Sinh Học'));
+
+            var avg = (x + y + z) / 3;
+            var sum = x + y + z;
+
+            document.write('Điểm trung bình: ' + avg.toFixed(2) + "<br>")
+            document.write('Tổng điểm 3 môn: ' + sum.toFixed(2))
+        }
+    </script>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Bài 2: Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit). [Hướng dẫn:
+        C/5 = (F-32)/9].</h2>
+    <p>Đổi độ C sang độ F</p>
+    <button onclick="myFunction2()">Click here</button>
+    <script>
+        function myFunction2() {
+            var c = parseInt(prompt('Nhập độ C'));
+            var f = (c * 9 / 5) + 32;
+
+            document.write(c + " độ C bằng " + f + " độ F")
+        }
+    </script>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Bài 3: Viết chương trình tính diện tích hình tròn.</h2>
+    <!-- Công thức tính diện tích hình tròn là S = Bán kính^2 * Pi-->
+    <p>Tính diện tích hình tròn</p>
+    <button onclick="myFunction3()">Click me</button>
+    <script>
+        function myFunction3() {
+            var x = parseInt(prompt('Nhập đường kính hình tròn'));
+            var area = x * x * Math.PI;
+
+            document.write('Diện tích hình tròn là: ' + area)
+
+        }
+    </script>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Bài 4: Viết chương trình chu vi hình tròn.</h2>
+    <!-- Công thức tính chu vi hình tròn: C=DxPi (Đường kính nhân Pi) hoặc C = (Rx2) x Pi trong đó R là bán kính-->
+    <p>Tính chu vi hình tròn</p>
+    <button onclick="myFunction3()">Click me</button>
+    <script>
+        function myFunction3() {
+            var x = parseInt(prompt('Nhập đường kính hình tròn'));
+            var cv = x * Math.PI;
+
+            document.write('Chu vi hình tròn là: ' + cv.toFixed(2));
+        }
+    </script>
+</body>
+
+</html>

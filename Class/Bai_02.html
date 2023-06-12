@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<style>
+    .btn {
+        background-color: #8f82cf;
+        color: white;
+        padding: 5px 5px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        opacity: 80%;
+    }
+</style>
+
+<body>
+    <h2>Bài 2: Ứng dụng chuyển đổi tiền tệ</h2>
+    <table cellpadding="5">
+        <thead>
+            <tr>
+                <td><label for="amount">Amount</label></td>
+                <td><label for="fromCurrency">From Currency</label></td>
+                <td><label for="toCurrency">To Currency</label></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="number" id="amount"></td>
+                <td><select name="" id="fromCurrency">
+                        <option value="VND">Việt Nam Đồng</option>
+                        <option value="USD">Đô la Mỹ</option>
+                    </select></td>
+                <td><select name="" id="toCurrency">
+                        <option value="VND">VND</option>
+                        <option value="USD">USD</option>
+                    </select></td>
+                <td><button onclick="myFunction()" class="btn">Convert</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Result:</h3>
+    <div id="result"></div>
+    <script>
+        function myFunction() {
+            var fromCurrency = document.getElementById("fromCurrency").value;
+            var toCurrency = document.getElementById("toCurrency").value;
+            var amount = parseInt(document.getElementById("amount").value);
+
+            var exchangeRate;
+
+            if (fromCurrency === "VND" && toCurrency === "USD") {
+                exchangeRate = 0.000043;
+            }
+            else if (fromCurrency === "USD" && toCurrency === "VND") {
+                exchangeRate = 23400;
+            } else {
+                alert("Không hỗ trợ chuyển đổi giữa cặp đồng tiền này.");
+                return;
+            }
+            var result = amount * exchangeRate;
+
+            document.getElementById("result").innerHTML = result.toFixed(2) + " " + toCurrency;
+        }
+    </script>
+</body>
+
+</html>
