@@ -43,13 +43,13 @@
         // <------------->
 
         // Khai báo biến với Var (Var: Khai báo lại được, ghi đè lại được.)
-        var age = 26;
-        console.log('Khai báo với từ khóa var lúc bắt đầu: ', age)
-        age = 50;
-        console.log('Khai báo với từ khóa var đã được ghi đè: ', age)
-        var age = 18
-        console.log('Khai báo với từ khóa var đã được khai báo lại', age)
-        // https://prnt.sc/1Q5_iMutgH3h
+        // var age = 26;
+        // console.log('Khai báo với từ khóa var lúc bắt đầu: ', age)
+        // age = 50;
+        // console.log('Khai báo với từ khóa var đã được ghi đè: ', age)
+        // var age = 18
+        // console.log('Khai báo với từ khóa var đã được khai báo lại', age)
+        // // https://prnt.sc/1Q5_iMutgH3h
 
 
         // Khai báo biến với Let (Let: Ghi đè lại được, không khai báo lại được.)
@@ -62,13 +62,13 @@
         // https://prnt.sc/0nTKjno7OT3u
 
         // Khai báo biến với Const (Const: Không cho ghi đè, không cho khai báo lại)
-        const gender = 'Nam';
-        console.log('Khai báo biến với Const lúc bắt đầu: ', gender);
-        gender = 'Nữ';
-        console.log('Khai báo biến với Const lúc ghi đè', gender);
-        const gender = 'Other';
-        console.log('Khai báo biến với Const lúc được khai báo lại: ', gender
-        // https://prnt.sc/qnnNAgjPSOPd
+        // const gender = 'Nam';
+        // console.log('Khai báo biến với Const lúc bắt đầu: ', gender);
+        // gender = 'Nữ';
+        // console.log('Khai báo biến với Const lúc ghi đè', gender);
+        // const gender = 'Other';
+        // console.log('Khai báo biến với Const lúc được khai báo lại: ', gender)
+        // // https://prnt.sc/qnnNAgjPSOPd
 
 
         // <------------->
@@ -77,6 +77,54 @@
         // Var: Khai báo lại được, ghi đè lại được.
         // Let: Ghi đè lại được, không khai báo lại được.
         // Const: Không cho ghi đè, không cho khai báo lại
+
+        // Kiểu dữ liệu String
+        // String --> Đoạn chuỗi được bọc trong dấu nháy đơn '' , nháy kép "" hoặc dấu huyền
+        // let name = 'Tran Phuoc Anh Minh 1';
+        // console.log('Kiểu dữ liệu String trong nháy đơn: ', typeof name);
+        // let name2 = "Tran Phuoc Anh Minh 2";
+        // console.log('Kiểu dữ liệu String trong nháy kép: ', typeof name2);
+        // let name3 = `Tran Phuoc Anh Minh 3`;
+        // console.log('Kiểu dữ liệu String trong dấu huyền: ', typeof name3)
+
+        // Kiểu dữ liệu Number: Những con số
+        // let age = 26;
+        // console.log('Age: ', typeof age);
+        // let luckyNumber = 08;
+        // console.log('Lucky Number: ', typeof luckyNumber);
+
+        // Toán tử: 
+        // Toán tử số học: Cộng (+), Trừ (-), Nhân (*), Chia (/), Chia lấy dư (%)
+        // Cho phép người dùng nhập vào 2 con số, tính tổng 2 con số đó:
+        // let number1 = Number(prompt('Nhập vào số thứ 1: '));
+        // let number2 = Number(prompt('Nhập vào số thứ 2: '));
+
+        // // Phải convert prompt về số:
+        // Cách 1: Dùng + trước prompt +prompt()
+        // Cách 2: Dùng Number(prompt())
+        // Cách 3: Dùng parseInt(prompt())
+
+        // let sum = number1 + number2;
+        // alert('Kết quả khi cộng 2 số với nhau là: ' + sum)
+
+        // <------------->
+
+        // Bài tập 2: Nhập vào năm sinh của bạn và năm hiện tại, tính số tuổi của bạn
+        let birthYear = parseInt(prompt('Nhập vào năm sinh của bạn: '));
+        let nowYear = parseInt(prompt('Nhập vào năm hiện tại: '));
+
+        let tuoi = nowYear - birthYear;
+        alert('Tuổi của bạn là: ' + tuoi);
+
+        // Bài tập 3: Cho hai con số 9 và 17, hãy tính tổng và tính số dư của hai số trên
+        let a = 9;
+        let b = 17;
+        console.log('Số dư của Number 1 là: ', a % 2);
+        console.log('Số dư của Number 2 là: ', b % 2);
+        let ketQua = (a % 2) + (b % 2);
+        let ketQua2 = (a % 2) * (b % 2);
+        alert('Tổng hai số dư là: ' + ketQua);
+        alert('Tích số dư của 2 số là: ' + ketQua2);
     </script>
 
     <script src="./js/main.js"></script>
