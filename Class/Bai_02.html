@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="amount">Amount</label>
+        <input type="text" id="amount">
+    </div>
+
+    <div>
+        <label for="fromCurrency">From Currency</label>
+        <select name="" id="fromCurrency">
+            <option value="VND">Việt Nam Đồng</option>
+            <option value="USD">Đô La Mỹ</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="toCurrency">To Currency</label>
+        <select name="" id="toCurrency">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select>
+    </div>
+
+    <button onclick="myFunction()">
+        Convert
+    </button>
+
+    <h3>Results</h3>
+    <div id="results"></div>
+
+    <script>
+        function myFunction() {
+            var fromCurrency = document.getElementById('fromCurrency').value;
+            var toCurrency = document.getElementById('toCurrency').value;
+            var amount = parseInt(document.getElementById('amount').value)
+
+            var exchangeRate;
+
+            if (fromCurrency === "VND" && toCurrency === "USD") {
+                exchangeRate = 0.00004;
+            } else if (fromCurrency === "USD" && toCurrency === "VND") {
+                exchangeRate = 230000;
+            } else {
+                alert("Không hỗ trợ chuyển đổi");
+                return;
+            }
+
+            var results = amount * exchangeRate;
+            document.getElementById("results").innerHTML = results.toFixed(2) + " " + toCurrency;
+        }
+    </script>
+</body>
+
+</html>

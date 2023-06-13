@@ -12,7 +12,7 @@
     <h1>Learn Javascript Basic</h1>
     <script>
         // Chức năng in ra ngoài màn hình 
-        console.log('Javascript Internal');
+        // console.log('Javascript Internal');
         // <------------->
 
         // // Hiển thị dưới dạng Popup, 1 ô hình vuông
@@ -93,7 +93,7 @@
         // let luckyNumber = 08;
         // console.log('Lucky Number: ', typeof luckyNumber);
 
-        // Toán tử: 
+        // Toán tử:
         // Toán tử số học: Cộng (+), Trừ (-), Nhân (*), Chia (/), Chia lấy dư (%)
         // Cho phép người dùng nhập vào 2 con số, tính tổng 2 con số đó:
         // let number1 = Number(prompt('Nhập vào số thứ 1: '));
@@ -110,21 +110,220 @@
         // <------------->
 
         // Bài tập 2: Nhập vào năm sinh của bạn và năm hiện tại, tính số tuổi của bạn
-        let birthYear = parseInt(prompt('Nhập vào năm sinh của bạn: '));
-        let nowYear = parseInt(prompt('Nhập vào năm hiện tại: '));
+        // let birthYear = parseInt(prompt('Nhập vào năm sinh của bạn: '));
+        // let nowYear = parseInt(prompt('Nhập vào năm hiện tại: '));
 
-        let tuoi = nowYear - birthYear;
-        alert('Tuổi của bạn là: ' + tuoi);
+        // let tuoi = nowYear - birthYear;
+        // alert('Tuổi của bạn là: ' + tuoi);
 
-        // Bài tập 3: Cho hai con số 9 và 17, hãy tính tổng và tính số dư của hai số trên
-        let a = 9;
-        let b = 17;
-        console.log('Số dư của Number 1 là: ', a % 2);
-        console.log('Số dư của Number 2 là: ', b % 2);
-        let ketQua = (a % 2) + (b % 2);
-        let ketQua2 = (a % 2) * (b % 2);
-        alert('Tổng hai số dư là: ' + ketQua);
-        alert('Tích số dư của 2 số là: ' + ketQua2);
+        // // Bài tập 3: Cho hai con số 9 và 17, hãy tính tổng và tính số dư của hai số trên
+        // let a = 9;
+        // let b = 17;
+        // console.log('Số dư của Number 1 là: ', a % 2);
+        // console.log('Số dư của Number 2 là: ', b % 2);
+        // let ketQua = (a % 2) + (b % 2);
+        // let ketQua2 = (a % 2) * (b % 2);
+        // alert('Tổng hai số dư là: ' + ketQua);
+        // alert('Tích số dư của 2 số là: ' + ketQua2);
+
+        // a++ (Có thực hiện nhưng trả kết quả ở lần gọi tiếp theo)
+        // ++a (Có thực hiện và trả kết quả ngay lần gọi đầu)
+
+        // let a = 10;
+
+        // let b = 10;
+
+        // console.log(++a + b++ + a++ + ++a + b++);
+
+        // <------------->
+
+        // Kiểu dữ liệu Boolean luôn luôn có 2 giá trị True / False
+        // const isX = true
+        // console.log('X co dep trai khong', isX)
+        // const isY = false
+        // console.log('Y co dep trai khong', isY)
+
+        // console.log('Kiểu dữ liệu của 2 Const trên là: ', typeof isX, typeof isY)
+        // Trong Javascript làm sao phân biệt được cái nào đúng cái nào sai?
+        // Đi tìm hiểu những thằng Falsy
+
+        // Truthy và Falsy
+        /*
+            Những giá trị Falsy
+            - 0
+            - ""
+            - null
+            - undefined
+            - NaN
+            - false
+            - -0
+            - 0n
+            - document.all
+        */
+
+        // <------------->
+
+        // Toán tử so sánh
+        // Các loại so sánh: > , >=, <=, ==, ===
+
+        // Ví dụ:
+        // let diemToanMinh = +prompt('Điểm thi toán vào 10 của bạn Minh là: ');
+        // let diemToanKin = +prompt('Điểm thi toán vào 10 của Kin là: ');
+        // let result = diemToanMinh >= diemToanKin
+        // console.log('Điểm toán của Minh có cao hơn điểm toán của Kin hay không?', result)
+        // console.log('Kiểu dữ liệu của result là: ', typeof result)
+
+        // console.log(5 == '5'); //=> True
+        // console.log(5 === '5'); // => False
+
+        // <------------->
+
+        // Toán tử Logic, biểu thức điều kiện
+        // || => Tương đối, tức là chỉ cần 1 trong 2 thằng đúng thì sẽ trả về kết quả cuối cùng là True
+        // && (và) => Tuyệt đối, tức cả 2 vế của mình đều là True => True, 1 hoặc 2 thằng false thì là false.
+        // ! (not) => Đẩo ngược giá trị ban đầu, true => false, false => true, trường hợp sử dụng ban đầu tức là mình muốn cái đấy là False.
+        // let isMinhIT = true;
+        // let isMinhEN = true;
+        // console.log('Anh Minh có thể mua được đất hay không?', !isMinhIT && isMinhEN)
+
+        // <------------->
+
+        // // Biểu thức điều kiện
+        // (a > b && b = 1)
+
+        // Biểu thức điều kiện luôn trả về mọi người kiểu dữ liệu Boolean có hai giá trị là True, False
+
+        // Cấu trúc câu điều kiện (mệnh đề if - else)
+        // let inputNumber = +prompt('Nhập vào từ 1 tới 10 để lấy được con số may mắn: ');
+        // if (inputNumber == 5) {
+        //     // Thực hiện cái gì đó trong đây
+        //     alert('Bạn đã trúng thưởng được con số may mắn')
+        // } else {
+        //     // Thực hiện cái gì đó khác nữa trong đây
+        //     alert('Chúc bạn may mắn lần sau!')
+        // }
+
+        // If => Nếu
+        // (BIểu thức điều kiện) => Chỉ trả về kết quả True hoặc False
+        // {....  } ==> Thực hiện Logic của mình ở trong đây khi mà điều kiện đúng
+        // else ==> ngược lại
+        // {....  } ==> Thực hiện Logic khi mà điều kiện không thỏa mãn.
+
+        // Bài 3: Lấy thông tin tuổi từ người dùng nhập vào, hãy kiểm tra nếu như tuổi của họ lớn hơn 18 tuổi thì mới được kết hôn. Không thì sẽ vào tù.
+        // Lời giải
+        // let age = prompt('Nhập tuổi của bạn:');
+        // if (age >= 18) {
+        //     alert('Bạn đã đủ tuổi để kết hôn');
+        // } else {
+        //     alert('Bạn chưa đủ tuổi để kết hôn, bạn phải vào tù')
+        // }
+
+        // Bài 4: Lấy thông tin đọ đẹp trai hoặc độ xinh gái của mình. Nếu như đẹp trai, xinh gái thì hiển thị sẽ có cơ hội lấy chồng đại gia, vợ đại gia, chui vào chạn không thì phải cố gắng học lập trình.
+        // Lời giải
+        // let info = confirm('Bạn có đẹp trai hay xinh gái không?');
+        // if (info == true) {
+        //     alert('Bạn là trai xinh, gái đẹp bạn có cơ hội lấy chồng đại gia, vợ đại gia');
+        // } else {
+        //     alert('Bạn phải cố gắng học lập trình')
+        // }
+
+        // Bài 5: Cho phép người dùng nhập vào 1 số , kiểm tra số đấy có phải là số chẵn hay không. Nếu không là số lẻ.
+        // Lời giải
+        // let number = +prompt('Nhập vào 1 số: ');
+        // if (number % 2 === 0) {
+        //     alert('Số chẵn');
+        // } else {
+        //     alert('Số lẻ');
+        // }
+
+        // <------------->
+
+        // Các dạng If-Else
+        // Thứ 2 dạng chỉ có 1 If
+        //  Ví dụ
+        // let minh = 'giau'
+        // if (minh === 'giau') {
+        //     console.log('Minh giàu thiệt')
+        // }
+
+        // Dạng nhiều If, if-else
+        // Ví dụ 2:
+        // let vu = prompt('Bạn đã tán đỗ ai?')
+        // if (vu == 'tan do dung') {
+        //     alert('Vụ đã có được Dung')
+        // } else if (vu == 'tan do diep') {
+        //     alert('Vụ đã có được Diệp')
+        // } else if (vu == "tan do hoa") {
+        //     alert('Vụ đã có được Hoa')
+        // } else {
+        //     alert('Ế')
+        // }
+
+        // Ví dụ 3:
+        // let a = +prompt('Nhập vào số a để giải phương trình bậc nhất');
+        // let b = +prompt('Nhập vào số b để giải phương trình bậc nhất');
+
+        // let x = -b / a
+        // if (a == 0 && b == 0) {
+        //     alert('Phương trình vô số nghiệm');
+        // } else if (a == 0 && b != 0) {
+        //     alert('Phương trình vô nghiệm');
+        // } else if (a != 0) {
+        //     alert('Phương trình có nghiệm là: ' + " " + x);
+        // } else {
+        //     alert('Nhập lại');
+        // }
+
+        // Ví dụ 4: Cho phép người dùng nhập vào giới tính, tuổi
+        // Nếu trên 18 tuổi thì người đàn ông trưởng thành, phụ nữ quyến rũ
+        // Dưới 18 tuổi thì con trai trẻ con, bé gái dễ thương
+        // let gender = prompt('Nhập vào giới tính');
+        // let age = +prompt('Nhập vào tuổi');
+        // if (gender == "Nam") {
+        //     if (age >= 18) {
+        //         alert('Bạn là người đàn ông trưởng thành');
+        //     } else {
+        //         alert('Bạn là con trai trẻ con');
+        //     }
+        // } if (gender == "Nữ") {
+        //     if (age >= 18) {
+        //         alert('Bạn là phụ nữ quyến rũ');
+        //     } else {
+        //         alert('Bé gái dễ thương');
+        //     }
+        // } if (gender != "Nam" && gender != "Nữ") {
+        //     if (age >= 18) {
+        //         alert('You are Gay');
+        //     } else {
+        //         alert('Gay Kid');
+        //     }
+        // }
+
+        // Cách 2:
+        let gender = prompt('Nhập vào giới tính');
+        let age = +prompt('Nhập vào tuổi');
+        if (age >= 18) {
+            // Trưởng thành
+            if (gender == "Nam") {
+                alert('Đàn ông trưởng thành');
+            } else if (gender == "Nữ") {
+                alert('Phụ nữ quyến rũ');
+            } else if (gender == "gioi tinh thu ba") {
+                alert('Bạn có giới tính thứ ba trưởng thành');
+            } else {
+                alert('Tôi không thể khẳng định giới tính của bạn');
+            }
+        } else {
+            if (gender == "Nam") {
+                alert('Bé trai trẻ con');
+            } else if (gender == "Nữ") {
+                alert('Bé gái trẻ con');
+            } else if (gender == "gioi tinh thu ba") {
+                alert('Bạn có giới tính thứ ba trẻ coh');
+            } else {
+                alert('Tôi không thể khẳng định giới tính của bạn');
+            }
+        }
     </script>
 
     <script src="./js/main.js"></script>

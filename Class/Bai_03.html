@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính BMI</title>
+</head>
+<h2>Viết ứng dụng tính BMI, trong đó BMI bằng Cân nặng / Chiều cao ^2</h2>
+<label for="weight">Weight</label>
+<input type="number" id="weight">
+<label for="height">height</label>
+<input type="number" id="height">
+<p>Results</p>
+<div id="bmi"></div>
+<button onclick="myFunction()">CLick Me</button>
+
+<script>
+    function myFunction() {
+        var weight = document.getElementById('weight').value;
+        var height = document.getElementById('height').value;
+
+        var bmi = weight / (height * 2)
+
+        document.getElementById("bmi").innerHTML = bmi.toFixed(2);
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>
