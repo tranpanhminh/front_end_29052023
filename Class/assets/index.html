@@ -4,14 +4,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Session 8: JavaScript Basic</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Session 08: Javascript Basic</title>
 </head>
 
+<body>
+    <h1>Learn Javascript Basic</h1>
+    <script>
+        // Chức năng in ra ngoài màn hình 
+        console.log('Javascript Internal');
+        // <------------->
 
+        // // Hiển thị dưới dạng Popup, 1 ô hình vuông
+        // alert('Hàm Alert');
+        // // Hiển thị Popup xác nhận
+        // confirm('Bạn có muốn học lập trình không');
+        // Hiển thị Popup lấy dữ liệu từ người dùng
+        // // Cách 1:
+        // console.log(prompt('Bạn muốn học ngôn ngữ gì?'))
+        // Biến
+
+
+        // <------------->
+
+        // var: TỪ khóa khai báo biến
+        // age: Định danh ra tên biến ==> camelCase (Con lạc đà)
+        // Nếu như 1 từ viết chữ thường, 2 từ trở lên mới viết theo kiểu camelCase
+        // Dấu = là phép gán (Đang thực hiện việc gán 1 cái gì cho tên biến của mình
+        // 26: Giá trị (Kiểu dữ liệu) được gán vào cho tên biến
+
+        // <------------->
+
+        // // Bài tập 1: Lấy dữ liệu từ người dùng về sở thích các món ăn, địa điểm du lịch thông qua Prompt ==> Lưu trữ và hiển thị nó qua Popup Alert()
+        // var monAn = prompt('Bạn thích ăn gì?');
+        // var diaDiem = prompt('Địa điểm du lịch bạn thích?');
+        // alert('Bạn thích ăn: ' + monAn + '\nBạn thích đi du lịch: ' + diaDiem);
+
+        // <------------->
+
+        // Khai báo biến với Var (Var: Khai báo lại được, ghi đè lại được.)
+        var age = 26;
+        console.log('Khai báo với từ khóa var lúc bắt đầu: ', age)
+        age = 50;
+        console.log('Khai báo với từ khóa var đã được ghi đè: ', age)
+        var age = 18
+        console.log('Khai báo với từ khóa var đã được khai báo lại', age)
+        // https://prnt.sc/1Q5_iMutgH3h
+
+
+        // Khai báo biến với Let (Let: Ghi đè lại được, không khai báo lại được.)
+        // let lopHoc = 'JS230529';
+        // console.log('Khai báo biến với Let lúc bắt đầu: ', lopHoc);
+        // lopHoc = 'JS230629';
+        // console.log('Khai báo biến với Let lúc được ghi đè: ', lopHoc);
+        // let LopHoc = 'Không có lớp học';
+        // console.log('Khai báo biến với Let lúc được khai báo lại: ', lopHoc);
+        // https://prnt.sc/0nTKjno7OT3u
+
+        // Khai báo biến với Const (Const: Không cho ghi đè, không cho khai báo lại)
+        const gender = 'Nam';
+        console.log('Khai báo biến với Const lúc bắt đầu: ', gender);
+        gender = 'Nữ';
+        console.log('Khai báo biến với Const lúc ghi đè', gender);
+        const gender = 'Other';
+        console.log('Khai báo biến với Const lúc được khai báo lại: ', gender
+        // https://prnt.sc/qnnNAgjPSOPd
+
+
+        // <------------->
+
+        // Var, Let, Const
+        // Var: Khai báo lại được, ghi đè lại được.
+        // Let: Ghi đè lại được, không khai báo lại được.
+        // Const: Không cho ghi đè, không cho khai báo lại
+    </script>
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
