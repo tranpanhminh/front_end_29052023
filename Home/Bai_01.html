@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Kiểm tra năm nhuận</title>
+</head>
+
+<body>
+    <h2>Bài 1: [Thực hành] Kiểm tra năm nhuận</h2>
+    <button onclick="myFunction()">Button</button>
+    <script>
+        function myFunction() {
+            let year = parseInt(prompt("Nhập năm: "));
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        alert(year + " là năm nhuận");
+                    } else {
+                        alert(year + " không phải là năm nhuận");
+                    }
+                } else {
+                    alert(year + " là năm nhuận");
+                }
+            } else {
+                alert(year + " không phải là năm nhuận");
+            }
+        }
+    </script>
+</body>
+
+</html>
