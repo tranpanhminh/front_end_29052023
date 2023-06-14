@@ -8,7 +8,46 @@
 </head>
 
 <body>
+    <pre>
+        Trường hợp 1: if(condition) {
+            // statement
+        }
 
+            condtition trả về một boolean 
+            -> Nếu là true -> Khối lệnh trong if được thực thi.
+            -> Nếu False -> Thì thôi
+
+        
+        Trường hợp 2:  if (condition) {
+            // statement
+        } else {
+
+        }
+
+            condtition trả về một boolean 
+            -> Nếu là true -> Khối lệnh trong if được thực thi.
+            -> Nếu False -> Khối lệnh trong else sẽ được thực thi.
+
+
+        Trường hợp 3:  if (condition) {
+            // statement
+        } else if (condition 2) {
+        }
+    
+            condtition trả về một boolean 
+            -> Nếu là true -> Khối lệnh trong if được thực thi.
+            -> Nếu False -> Khối lệnh trong else if sẽ được thực thi.   
+</pre>
+
+    <button onclick="myFunction()">Chạy đổi màu</button>
+    <script>
+        function myFunction() {
+            const color = prompt('Nhập màu bạn muốn hiển thị: ');
+            const content = prompt('Nhập nội dung bạn muốn hiển thị: ');
+            // Bắt buộc phải là dấu backtick `
+            console.log(`%c ${content}`, `color: ${color};font-size: 40px`);
+        }
+    </script>
 </body>
 
 </html>

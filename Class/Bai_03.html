@@ -8,7 +8,184 @@
 </head>
 
 <body>
+    <style>
+        legend {
+            background-color: yellow;
+            border: 1px solid black;
+            color: black;
+            padding: 10px;
+        }
 
-</body>
+        fieldset {
+            padding: 20px;
+        }
+    </style>
+
+    <body>
+        <fieldset>
+            <legend>Bài 1</legend>
+            <p>Nhập vào số lượng tiêu thụ điện kwh và cho biết bao nhiêu tiền điện</p>
+            <img src="https://media.discordapp.net/attachments/1114486810064736316/1118428616968122368/image.png"
+                alt="">
+            <br>
+            <button onclick="bai_01()">Chạy bài 1</button>
+            <p id="hoaDon"></p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Bài 2</legend>
+            <p>Tạo đồng hồ bấm giây</p>
+            <br>
+            <button onclick="bai_02()">Nhập vào số phút cần đếm ngược</button>
+            <p id="phut-dem-nguoc"></p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Bài 3</legend>
+            <p>Tạo đồng hồ thực</p>
+            <br>
+            <button onclick="bai_03()">Nhập vào thời gian thực</button>
+            <p id="thoi-gian-thuc"></p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Bài 4</legend>
+            <p>Tạo đồng hồ đếm ngược</p>
+            <br>
+            <button onclick="bai_04()">Nhập vào thời gian thực</button>
+            <p id="dem-nguoc"></p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Bài 5</legend>
+            <p>Tạo đồng hồ đếm ngược</p>
+            <br>
+            <button onclick="bai_05()">Nhập vào thời gian thực</button>
+            <p id="dem-nguoc-2"></p>
+        </fieldset>
+
+        <script>
+            // FUnction bài 1
+            function bai_01() {
+                const soDien = Number(prompt("Nhập vào số lượng tiêu thụ điện kWh: "));
+                let bill;
+                const rank_1 = 50 * 1700;
+                const rank_2 = rank_1 + 50 * 1800;
+                const rank_3 = rank_2 + 100 * 1900;
+                const rank_4 = rank_3 + 100 * 2000;
+                const rank_5 = rank_4 + 100 * 2200;
+
+                // Validate dữ liệu
+                if (soDien < 0) {
+                    alert('Không nhập số âm!');
+                    return; //chỉ sử dụng bên trong function() -> Kết thúc function, trả vê kết quả
+                }
+
+                if (isNaN(soDien)) {
+                    alert("Phải nhập số");
+                    return;
+                }
+
+
+                if (soDien <= 50) {
+                    bill = soDien * 1700;
+                } else if (soDien <= 100) {
+                    bill = (soDien - 50) * 1800 + rank_1;
+                } else if (soDien <= 200) {
+                    bill = (soDien - 100) * 1900 + rank_2;
+                } else if (soDien <= 300) {
+                    bill = (soDien - 200) * 2000 + rank_3;
+                } else if (soDien <= 400) {
+                    bill = (soDien - 300) * 2200 + rank_4;
+                } else {
+                    bill = (soDien - 400) * 2500 + rank_5;
+                }
+
+                const resultElement = document.querySelector('#hoaDon');
+                resultElement.innerHTML = "Tiền điện cần phải trả là: " + bill.toLocaleString('de-DE') + " VND";
+            }
+
+            // toLocalString() --> format string hiẻn thị
+
+
+            // Function bài 2
+            function bai_02() {
+                const minute = Number(prompt("Nhập vào số phút cần đếm ngược"));
+                const resultElement = document.querySelector('#phut-dem-nguoc');
+                const milisecond = minute * 60 * 1000;
+
+                setTimeout(renderCountDown, milisecond);
+                console.log(milisecond)
+                function renderCountDown() {
+                    resultElement.innerHTML = '<h1>Hết giờ</h1>';
+                }
+            }
+
+            // Function bài 3
+            function bai_03() {
+
+                const resultElement = document.querySelector('#thoi-gian-thuc');
+                // setInterval (Khối lệnh thực thi, 1000) -> Function sẽ được thực thi sau thời gian bao nhiêu mili giây.
+
+                setInterval(
+                    function () {
+                        resultElement.innerHTML = new Date();
+                    },
+                    1000
+                );
+            }
+
+            // Function bài 4
+            function bai_04() {
+                const minute = Number(prompt("Nhập vào số phút cần đếm ngược"));
+                const resultElement = document.querySelector('#dem-nguoc');
+                let totalSecond = minute * 60; //Mỗi giây lại giảm 1 lần
+
+                if (minute > 60 || minute < 0) {
+                    alert('Nhập số phút trong khoảng từ 0 đến 60')
+                    return;
+                }
+
+                setInterval(renderCountDown, 1000);
+                function renderCountDown() {
+                    totalSecond--;
+                    const minuteRender = parseInt(totalSecond / 60); // --> Lấy số phút -- lấy phần nguyên, còn phần dư của phép tính
+                    // hoặc const secondRender = totalSecond % 60;
+                    const secondRender = (totalSecond / 60 - minuteRender) * 60;
+                    resultElement.innerHTML = minuteRender + ":" + secondRender;
+                }
+            }
+
+            // Function bài 5
+            function bai_05() {
+                const minute = Number(prompt("Nhập vào số phút cần đếm ngược"));
+                const resultElement = document.querySelector('#dem-nguoc-2');
+                let totalSecond = minute * 60; //Mỗi giây lại giảm 1 lần
+
+                if (minute < 0) {
+                    return alert('Nhập số phút trong khoảng từ > 0');
+                }
+
+                setInterval(renderCountDown, 100);
+                function renderCountDown() {
+                    totalSecond--;
+                    const hourRender = parseInt(totalSecond / 3600);
+                    const minute = (totalSecond / 3600 - hourRender) * 60;
+                    const minuteRender = parseInt(minute);
+                    const secondRender = parseInt((minute - minuteRender) * 60);
+                    const secondView = secondRender < 10 ? "0" + secondRender : secondRender; //Toán tử 3 ngôi
+                    resultElement.innerHTML = hourRender + ":" + minuteRender + ":" + secondView;
+                }
+            }
+        </script>
+    </body>
 
 </html>
