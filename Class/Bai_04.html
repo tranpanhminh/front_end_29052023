@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập Variables,Data types,Operators</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Bài 1: Khai báo biến</legend>
+        <li>firstName có giá trị là: Academy.</li>
+        <li>lastName có giá trị là : Rikkei.</li>
+        <li>fullName có giá trị là : Rikkei Academy.</li>
+        <br>
+        <button onclick="bai_01()">Chạy bài 1</button>
+    </fieldset>
+
+    <script>
+        // Cú pháp: function + function name + () + {// Khối lệnh thực thi}
+
+        // Có tính chất Hosting
+
+        // Chỉ được chạy khi được gọi
+
+        function bai_01() {
+            const firstName = "Academy";
+            const lastName = "Rikkei";
+            const fullName = lastName + " " + firstName;
+            console.error("Cảnh báp: ", fullName);
+        }
+    </script>
+</body>
+
+</html>
