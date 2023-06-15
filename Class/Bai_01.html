@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Tính chỉ số cân nặng của cơ thể</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Bài 1:</legend>
+        <p>Tính chỉ số cân nặng của cơ thể</p>
+        <img src="https://api.rikkeiacademy.com/api/get-file-content?file_path=markdown/1680055328_7EaUgvsu75XQoIky.png"
+            alt="">
+        <br>
+        <button onclick="bai_01()">Chạy bài 1</button>
+        <h3>Kết quả:</h3>
+        <div class="result"></div>
+    </fieldset>
+
+    <script>
+        function bai_01() {
+            const weight = Number(prompt("Nhập vào cân nặng (kg): "));
+            const height = Number(prompt("Nhập vào chiều cao (m): "));
+
+            if (weight <= 0 || height <= 0) {
+                alert("Nhập vào số dương");
+                return;
+            }
+
+            let bmi = ((weight / (height * height))).toFixed(1);
+
+            let result = '';
+            let rank = '';
+
+            if (bmi < 18.5) {
+                result = "Gầy";
+            } else if (bmi < 25) {
+                result = "Bình thường";
+            } else {
+                result = "Thừa cân";
+                // Phân loại các trường hợp thừa cân
+                if (bmi < 30) {
+                    rank = "Tiền béo phì";
+                } else if (bmi < 35) {
+                    rank = "Béo phì độ I";
+                } else if (bmi < 40) {
+                    rank = "Béo phì độ II";
+                } else {
+                    rank = "Béo phì độ III";
+                }
+            }
+
+            // Hiển thị kết quả:
+            const stringRank = " Có cấp độ là " + rank;
+
+            const resultElement = document.querySelector('.result');
+            resultElement.innerHTML =
+                "Chỉ số BMI của bạn là: " +
+                "<b>" +
+                bmi +
+                "</b> và phân loại là: " +
+                result + (rank ? stringRank : ""); // Toán tử 3 ngôi để thực hiện
+        }
+
+    </script>
+</body>
+
+</html>
