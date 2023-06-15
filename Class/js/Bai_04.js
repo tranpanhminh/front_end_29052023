@@ -91,5 +91,4 @@ function bai_05() {
           console.log(i);
         }
       }
-      
 }
