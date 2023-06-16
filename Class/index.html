@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./main.js"></script>
+    <title>Loop</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Ví dụ 1:</legend>
+        <p>Sinh bảng cửu chương</p>
+        <button onclick="bai_01()">Click để nhập số</button>
+        <h3>Kết quả:</h3>
+        <div class="result-01"></div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Ví dụ 2:</legend>
+        <p>Tạo đường kẻ</p>
+        <button onclick="bai_02()">Click để chạy</button>
+        <h3>Kết quả:</h3>
+        <div class="result-02"></div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Ví dụ 3:</legend>
+        <p>Ví dụ Do-While</p>
+        <button onclick="bai_03()">Click để chạy</button>
+        <h3>Kết quả:</h3>
+        <div class="result-03"></div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Ví dụ 4: Break</legend>
+        <p>Ví dụ Break</p>
+        <button onclick="bai_04()">Click để chạy</button>
+        <h3>Kết quả:</h3>
+        <div class="result-04"></div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Ví dụ 5: Continue</legend>
+        <p>Ví dụ Continue</p>
+        <button onclick="bai_05()">Click để chạy</button>
+        <h3>Kết quả:</h3>
+        <div class="result-05"></div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Ví dụ 6: Vòng lặp lồng</legend>
+        <p>Bảng cửu chương</p>
+        <button onclick="bai_06()">Click để chạy</button>
+        <h3>Kết quả:</h3>
+        <table class="result-06" cellpadding="20"></table>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Ví dụ 7: </legend>
+        <p>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+            <br>
+            <br>
+            <button onclick="bai_07()">Chạy bài 7</button>
+        <h3>Kết quả:</h3>
+        <div class="result-07"></div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Ví dụ 8: </legend>
+        <p>
+            <br>
+            <button onclick="bai_08()">Chạy bài 8</button>
+        <h3>Kết quả:</h3>
+        <table class="result-08"></table>
+    </fieldset>
+</body>
+
+</html>
