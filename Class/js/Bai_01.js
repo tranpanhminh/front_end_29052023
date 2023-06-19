@@ -235,3 +235,100 @@ function bai_09_1() {
 
   const resultElement = document.querySelector(".result-09-1");
 }
+
+// Script bài 10
+function bai_10() {
+  let resultContent = "";
+  for (let row = 1; row <= 9; row++) {
+    resultContent += "<tr>";
+    for (let col = 1; col <= 9; col++) {
+      resultContent += `<td> ${col} x ${row} = ${row * col} </td>`;
+      console.log(resultContent);
+    }
+    resultContent += "</tr>";
+  }
+  const resultElement = document.querySelector(".result-10");
+  resultElement.innerHTML = resultContent;
+}
+
+// Script bài 11
+function bai_11() {
+  const text = prompt("Nhập vào 1 chữ bất kỳ: ");
+  const textWords = text.split("");
+  const textReverse = textWords.reverse();
+  const textSentences = textReverse.join("");
+
+  const resultElement = document.querySelector(".result-11");
+  resultElement.innerHTML = textSentences;
+}
+
+// Script bài 12
+function bai_12() {
+  const soThuNhat = parseInt(prompt("Nhập vào số nguyên thứ 1: "));
+  const soThuHai = parseInt(prompt("Nhập vào số nguyên thứ 2: "));
+  const soThuBa = parseInt(prompt("Nhập vào số nguyên thứ 3: "));
+  const soThuTu = parseInt(prompt("Nhập vào số nguyên thứ 4: "));
+  const soThuNam = parseInt(prompt("Nhập vào số nguyên thứ 5: "));
+
+  let max = soThuNhat;
+
+  if (max < soThuHai) {
+    max = soThuHai;
+  }
+
+  if (max < soThuBa) {
+    max = soThuBa;
+  }
+
+  if (max < soThuTu) {
+    max = soThuTu;
+  }
+
+  if (max < soThuNam) {
+    max = soThuNam;
+  }
+
+  const numbers = [soThuNhat, soThuHai, soThuBa, soThuTu, soThuNam];
+  numbers.sort(function (a, b) {
+    return b - a;
+  });
+
+  const resultElement = document.querySelector(".result-12");
+  resultElement.innerHTML =
+    "Số thứ nhất là: " +
+    soThuNhat +
+    "<br>" +
+    "Số thứ hai là: " +
+    soThuHai +
+    "<br>" +
+    "Số thứ ba là: " +
+    soThuBa +
+    "<br>" +
+    "Số thứ tư là: " +
+    soThuTu +
+    "<br>" +
+    "Số thứ năm là: " +
+    soThuNam +
+    "<br>" +
+    "Max là số: " +
+    max +
+    "<br>" +
+    "Dãy số theo thứ tự giảm dần là: " +
+    numbers;
+}
+
+// Script bài 13
+function bai_13() {
+  const N = Number(prompt("Nhập vào số N: "));
+  let uoc = "";
+  for (let i = 1; i <= N; i++) {
+    if (N % i === 0) {
+      uoc += i + ", ";
+      console.log(uoc);
+    }
+  }
+  console.log("Các ước của", N, "là:");
+
+  const resultElement = document.querySelector(".result-13");
+  resultElement.innerHTML = "Các ước của " + N + " là: " + uoc;
+}
