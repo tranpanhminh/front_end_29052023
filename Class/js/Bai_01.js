@@ -121,3 +121,39 @@ function bai_06() {
 const resultElement = document.querySelector(".result-06");
 
 }
+
+// <-------------------->
+// Script bài 7
+function bai_07() {
+// B1:
+  let N = 1;
+  let m =0;
+  let count = 0;
+
+// B2: Đặt biến để lưu kết quả số hoàn hảo
+let perfectNumbers = "";
+// B5: Check tất cả số tăng dần có phải số hoàn hảo hay không -> Count = 5
+
+while (count < 4) {
+// B3: Xác định một số hoàn hảo
+let sum = 0;
+for (let i = 1; i <= N/2 ; i++) {
+  if (N%i===0) {
+    sum +=i;
+  }
+}
+// B4: Xác định số hoàn hảo và lưu nó lại,
+if (sum === N) {
+  perfectNumbers += N + "";
+  count++;
+}
+N++;
+m++;
+}
+
+
+console.log ("Kiểm tra số lần lặp", m)
+console resultElement = document.querySelector(".result-07");
+resultElement.innerHTML = perfectNumbers;
+
+}
