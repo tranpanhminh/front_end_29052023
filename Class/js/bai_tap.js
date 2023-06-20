@@ -107,11 +107,31 @@ function bai_04() {
   const english = ["Dog", "Cat", "Chicken"];
   const word = document.querySelector("#vietnamese").value;
   result = "";
-  for (let i = 0; i < vietnamese.length; i++) {
-    if ((word == vietnamese[i])) {
-      result = english[i];
+  for (let i = 0; i < english.length; i++) {
+    if (word.toLowerCase().trim() == english[i].toLowerCase()) {
+      result = vietnamese[i];
+      break;
     }
   }
   const resultElement = document.querySelector("#english");
+  resultElement.value = result;
+}
+
+// Script bài 5
+let count = 0;
+
+function bai_05() {
+  text = "This is a default text";
+  let result = "";
+  if (count == text.length) {
+    count = 0;
+  } else {
+    count++;
+  }
+  for (let i = 0; i < count; i++) {
+    result += text[i];
+  }
+
+  const resultElement = document.querySelector("#textarea");
   resultElement.value = result;
 }
