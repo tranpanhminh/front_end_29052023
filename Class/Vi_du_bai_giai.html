@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/Vi_du.js"></script>
+    <title>Bài tập function</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Bài 1</legend>
+        <h3>Nhập vào chuỗi số cách nhau bởi dấu phẩy, in ra số nguyên tố</h3>
+        <input type="text" id="input-01" placeholder="1,4,5,6,10" />
+        <button onclick="bai_01()">Check</button>
+        <p id="result-01"></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Bài 2.1</legend>
+        <h3>Chuyển đổi meter sang feet</h3>
+        <input type="text" id="input-02" placeholder="meter" />
+        <button onclick="bai_02()">Check</button>
+        <p id="result-02"></p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Bài 2.2</legend>
+        <h3>Chuyển đổi meter sang feet và lưu dữ liệu</h3>
+        <input type="text" id="input-022" placeholder="meter" />
+        <button onclick="bai_022()">Lưu</button>
+        <p id="result-02"></p>
+        <table id="meter-to-feet">
+            <thead>
+                <tr>
+                    <th>Meter</th>
+                    <th>Feet</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </fieldset>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

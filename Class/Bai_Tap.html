@@ -44,10 +44,61 @@
     <fieldset>
         <legend>Bài 2:
         </legend>
-        <p>Nhập vào các số, in ra các số nguyên tố (2)</p>
-        <button onclick="bai_02()">Chạy</button>
+        <p>Chuyển đổi từ feet sang meters</p>
+        <h3><b>Version 1: Chuyển đổi từ Feet sang Meter</b></h3>
+        <input type="text" id="feet-value-01" placeholder="Nhập feet"> <span>Feet</span>
+        <br>
+        <button onclick="bai_02_01()">Convert</button>
+        <br>
+        <input type="text" id="meter-value-01" disabled> <span>Meter</span>
+        <br>
+        <br>
+        <hr>
+
+        <h3><b>Version 2: Chuyển đổi qua lại giữa Meter và Feet</b></h3>
+        <input type="text" id="first-value-02">
+        <select name="" id="from-value">
+            <option value="meter">Meter</option>
+            <option value="feet">Feet</option>
+        </select>
+        <button onclick="bai_02_02()">Convert</button>
+        <br>
+        <input type="text" id="second-value-02" disabled>
+        <select name="" id="to-value">
+            <option value="meter">Meter</option>
+            <option value="feet">Feet</option>
+        </select>
+
+        <h4>In kết quả ra bảng</h4>
+        <table id="result-table"></table>
+
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 3:
+        </legend>
+        <p>Nhập N vào vẽ hình tròn (N), hình vuông (N), hình chữ nhật (1N, 3N) và thêm màu</p>
+        <button onclick="bai_03()">Check</button>
         <h3>Kết quả:</h3>
-        <div class="result-02"></div>
+        <div class="hinh-tron"></div>
+        <br>
+        <div class="hinh-vuong"></div>
+        <br>
+        <div class="hinh-chu-nhat"></div>
+    </fieldset>
+
+    <br>
+    <fieldset>
+        <legend>Bài 4:
+        </legend>
+        <p>Luyện tập sử dụng mảng, hàm. Làm quen với khái niệm "Ứng dụng quản lý".</p>
+        <button onclick="bai_03()">Check</button>
+        <h3>Kết quả:</h3>
+        <div class="hinh-tron"></div>
+        <br>
+        <div class="hinh-vuong"></div>
+        <br>
+        <div class="hinh-chu-nhat"></div>
     </fieldset>
 </body>
 
