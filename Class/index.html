@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 16: Function</title>
+</head>
+
+<body>
+    <h3>Lưu ý về function</h3>
+    <ol>
+        <li>Function có tính tái sử dụng</li>
+        <li>Function là có tính chất hoisting</li>
+        <li>Function chỉ thực thi khối lệnh khi được gọi</li>
+    </ol>
+
+    <script>
+
+        // Tính chất hoisting --> Chạy qua Script 1 lần và sẽ ghi nhận các function
+        sum(null, 30)
+        // Cách khai báo Function
+        // Function nameFunction(param1, param2) {}
+        function sum(a, b) {
+            console.log("a", a, "b", b);
+            const sum = a + b;
+            // return --> trả về 1 kết quả cho function --> bất kỳ kiểu dữ liệu nào
+            // gặp return --> kết thúc function
+            return sum;
+            // console.log sẽ không chạy sau return;
+            console.log("Hello");
+        }
+
+        // Đặt 1 biến để hứng kết quả
+        sum(10, 20);
+        const test = sum(20, 30);
+        console.log("Kết quả sum", test);
+
+        const arr_1 = [1, 2];
+        console.log("arr 1: ", arr_1);
+
+        const arr_2 = arr_1;
+        arr_2[2] = 100;
+        console.log("arr 1 lần 2: ", arr_1);
+
+        // Cách xử lý
+        // Có dùng for + array mới
+        // Có thể dùng concat, spread
+        const arr_3 = [];
+        for (let i = 0; i < arr_1.length; i++) {
+            arr_3[i] = arr_1[i]
+        }
+
+        console.log("arr 3: ", arr_3)
+
+        arr_3[3] = 50;
+
+        console.log("arr 1 lần 3: ", arr_1);
+        console.log("arr 3 lần 2: ", arr_3);
+
+        function getColor(color) {
+            console.log(color);
+
+        }
+
+        const testColor = getColor;
+        testColor('Red');
+        console.log("Kiểm tra function", getColor("green"));
+
+        // Tạo 1 function bằng cách khai báo biến
+        // Cách 1: Cách truyền thống Function nameFunction(){}        
+        // Cách 2: Khai báo function
+        const calculateArea = function (r) {
+            return 2 * 3.14 * r * r;
+        };
+
+        // Cách 3: Dùng IIFE
+        // Dùng 1 lần duy nhất, đóng gói thư viện
+        (function (color) {
+            const body = document.querySelector("body");
+            body.style.background = color;
+        })("pink");
+
+        // Cách 4: Dùng Arrow Function
+        const getData = (data) => {
+            return data;
+        };
+
+        const getData2 = (data) => data;
+
+        const getObject = () => {
+            return {};
+        };
+        const getObject2 = () => ({})
+
+        console.log("Kiểm tra", getObject(), getObject2());
+
+        // Tính tổng các số nhập vào
+        function calculateSum(a, b, c) {
+            let sum = 0;
+            for (let index = 0; index < arguments.length; index++) {
+                sum += arguments[index];
+            }
+            return sum;
+        }
+
+        console.log(calculateSum(1, 2, 3));
+        console.log(calculateSum(1, 2, 3, 4, 123213, 312));
+
+        // Function không tên
+        setTimeout(function () {
+            console.log("Tôi là function không tên!");
+        }, 3000);
+
+
+        // Callback Function: Là 1 function được lấy làm đối số của Function khács
+        function x10(a) {
+            return a * 10;
+        }
+
+        function renderNumber(callFn, number) {
+            const x10 = callFn(number);
+            return x10;
+        }
+
+        const result = renderNumber(x10, 8);
+        console.log("Kết quả x10", result);
+    </script>
+</body>
+
+</html>

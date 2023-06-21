@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/Bai_Tap.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Bài 1:
+        </legend>
+        <p>Nhập vào chuỗi số cách nhau bởi dấu phẩy, và in ra số nguyên tố</p>
+        <input type="text" id="input-01" placeholder="1,4,5,6,10"><button onclick="bai_01()">Check</button>
+        <h3>Kết quả:</h3>
+        <div class="result-01"></div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 2:
+        </legend>
+        <p>Nhập vào các số, in ra các số nguyên tố (2)</p>
+        <button onclick="bai_02()">Chạy</button>
+        <h3>Kết quả:</h3>
+        <div class="result-02"></div>
+    </fieldset>
+</body>
+
+</html>
