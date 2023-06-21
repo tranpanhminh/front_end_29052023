@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./js/crud.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border-collapse: collapse;
+        }
+
+        table tr:nth-child(even) {
+            background-color: rgba(184, 177, 177, 0.716);
+        }
+
+        td {
+            padding: 10px 20px;
+        }
+
+        tr td:first-child {
+            width: 70%;
+        }
+
+        section {
+            padding: 30px;
+            background-color: bisque;
+            width: 40%;
+            margin-bottom: 30px;
+        }
+
+        .input-add {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h3>Add new product</h3>
+        <input type="text" id="input-add" />
+        <button onclick="handleAdd()">Add</button>
+    </section>
+    <table>
+        <tr>
+            <td>SP1</td>
+            <td><button>Edit</button> <button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>SP1</td>
+            <td><button>Edit</button> <button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>SP1</td>
+            <td><button>Edit</button> <button>Delete</button></td>
+        </tr>
+    </table>
+    <script src="./crud.js"></script>
+</body>
+
+</html>
