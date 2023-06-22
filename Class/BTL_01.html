@@ -27,11 +27,28 @@
         </legend>
         <p>Luyện tập sử dụng mảng, hàm. Làm quen với khái niệm "Ứng dụng quản lý".</p>
         <h2>Add New Product</h2>
+        <div class="form-search-product">
+            <div>
+                <input type="text" id="input-search" placeholder="Search Product">
+            </div>
+            <button onclick="handleSearch()">Search</button>
+        </div>
+        <div class="search-result"></div>
+        <br>
         <div class="form-product">
             <div>
                 <input type="text" id="input-add" placeholder="New Product">
             </div>
             <button onclick="handleAdd()">Add</button>
+        </div>
+        <br>
+        <div class="form-update-product">
+            <div>
+                <input type="text" id="input-edit" placeholder="Old Name" disabled>
+                <input type="text" id="input-update" placeholder="Type new name">
+            </div>
+            <button onclick="handleUpdate()">Update</button>
+            <button onclick="handleCancel()">Cancel</button>
         </div>
         <h3>Display All Product</h3>
         <table>

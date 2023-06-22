@@ -9,7 +9,7 @@
 window.addEventListener("load", function () {
   renderProduct();
 });
-
+let index;
 // Tạo mảng
 products = [
   "Sony Xperia",
@@ -48,7 +48,14 @@ function handleEdit(i) {
     `Bạn muốn chỉnh sửa tên sản phẩm ${products[i]} thành: `
   );
   console.log(editProduct);
-  products.splice(i, 1, editProduct);
+  // Nếu như người dùng không nhập gì hoặc nhấn Cancel thì dữ liệu bảo toàn
+  if (editProduct == "" || editProduct == null) {
+    products.splice(i, 0);
+    // Ngược lại là người dùng nhập thông tin vào thì Update thông tin mới
+  } else {
+    products.splice(i, 1, editProduct);
+  }
+
   renderProduct();
 }
 
@@ -58,18 +65,70 @@ function renderProduct() {
   let table = document.querySelector("table");
 
   // B2: Create Content containing product information in HTML
-  let tableContent = "";
+  let tableContent = `<tr>
+  <th colspan="2">Product</th>
+  <th colspan="2">${products.length} products</th>
+</tr>`;
 
   // B3: Loop through each product ---> Display content in HTML
   for (let i = 0; i < products.length; i++) {
     let element = products[i];
     tableContent += `<tr>
-     <td>${element}</td>
+     <td><span>${element}</span></td>
      <td><button onclick="handleEdit(${i})">Edit</button></td>
+     <td><button onclick="handleEditV2(${i})">Edit V2</button></td>
      <td><button onclick="handleDelete(${i})">Delete</button></td>
 </tr>`;
   }
 
   // B4: Reattach Element
   table.innerHTML = tableContent;
+}
+
+// Thêm Function Edit Version 2
+function handleEditV2(i) {
+  console.log(i);
+  index = i;
+  let oldName = document.querySelector("#input-edit");
+  const displayUpdateBoard = document.querySelector(".form-update-product");
+  displayUpdateBoard.style.display = "flex";
+  console.log(oldName);
+  oldName.value = products[i];
+  console.log(oldName.value);
+
+  renderProduct();
+}
+
+// Thêm Function Cancel cho Edit Version 2
+function handleCancel() {
+  const displayUpdateBoard = document.querySelector(".form-update-product");
+  document.querySelector("#input-edit").value =
+    document.querySelector("#input-edit").placeholder;
+  products.splice(index, 0);
+  displayUpdateBoard.style.display = "none";
+  renderProduct();
+}
+
+// Thêm Function Update cho Edit Version 2
+function handleUpdate() {
+  const updateProduct = document.querySelector("#input-update").value;
+  console.log(updateProduct);
+  if (updateProduct == "") {
+    products.splice(index, 0);
+  } else {
+    products.splice(index, 1, updateProduct);
+  }
+
+  renderProduct();
+}
+
+// Thêm function Search
+function handleSearch() {
+  const searchProduct = document.querySelector("#input-search").value;
+  console.log(searchProduct);
+
+  const resultFilter = products.filter(function (product) {
+    return product.toLowerCase().includes(searchProduct.toLowerCase());
+  });
+  console.log(resultFilter);
 }

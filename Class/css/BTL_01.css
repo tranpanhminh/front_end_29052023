@@ -9,14 +9,20 @@ h3 {
     margin: 20px 0px;
 }
 
-.form-product {
+.form-product,
+.form-update-product,
+.form-search-product {
     background-color: #f2f2f2;
-    width: 500px;
+    width: 800px;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+}
+
+.form-update-product {
+    display: none;
 }
 
 button {
@@ -26,17 +32,30 @@ button {
     padding: 10px 20px;
     margin-left: 10px;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 button:hover {
     opacity: 90%;
+    cursor: pointer;
 }
 
-#input-add {
+#input-add,
+#input-search {
     padding: 10px 20px;
     border: none;
-    width: 300px
+    width: 300px;
+    border-radius: 5px;
+}
+
+
+#input-edit,
+#input-update {
+    padding: 10px 20px;
+    border: none;
+    border: 1px ridge black;
+    border-radius: 5px;
+    width: 49%;
+
 }
 
 table,
@@ -50,6 +69,14 @@ th {
 
 table td tr {
     border: none !important;
+}
+
+th:first-child {
+    text-align: left;
+}
+
+th:last-child {
+    color: red;
 }
 
 thead>tr>td {
