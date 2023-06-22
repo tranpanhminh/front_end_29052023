@@ -6,9 +6,6 @@
  */
 
 // Tự động chạy Function Render
-window.addEventListener("load", function () {
-  renderProduct();
-});
 let index;
 // Tạo mảng
 products = [
@@ -18,6 +15,9 @@ products = [
   "Xiaomi Redmi Note 4",
   "Apple Iphone 6S",
 ];
+window.addEventListener("load", function () {
+  renderProduct(products);
+});
 
 // Thêm Function Add
 function handleAdd() {
@@ -31,14 +31,14 @@ function handleAdd() {
   inputElement.value = "";
 
   // B4: Render lại
-  renderProduct();
+  renderProduct(products);
 }
 
 // Thêm Function Delete
 function handleDelete(i) {
   console.log(i);
   products.splice(i, 1);
-  renderProduct();
+  renderProduct(products);
 }
 
 // Thêm Function Edit
@@ -56,23 +56,23 @@ function handleEdit(i) {
     products.splice(i, 1, editProduct);
   }
 
-  renderProduct();
+  renderProduct(products);
 }
 
 // Function Data của Table
-function renderProduct() {
+function renderProduct(data) {
   // B1: Define Element
   let table = document.querySelector("table");
 
   // B2: Create Content containing product information in HTML
   let tableContent = `<tr>
   <th colspan="2">Product</th>
-  <th colspan="2">${products.length} products</th>
+  <th colspan="2">${data.length} products</th>
 </tr>`;
 
   // B3: Loop through each product ---> Display content in HTML
-  for (let i = 0; i < products.length; i++) {
-    let element = products[i];
+  for (let i = 0; i < data.length; i++) {
+    let element = data[i];
     tableContent += `<tr>
      <td><span>${element}</span></td>
      <td><button onclick="handleEdit(${i})">Edit</button></td>
@@ -96,7 +96,7 @@ function handleEditV2(i) {
   oldName.value = products[i];
   console.log(oldName.value);
 
-  renderProduct();
+  renderProduct(products);
 }
 
 // Thêm Function Cancel cho Edit Version 2
@@ -106,7 +106,7 @@ function handleCancel() {
     document.querySelector("#input-edit").placeholder;
   products.splice(index, 0);
   displayUpdateBoard.style.display = "none";
-  renderProduct();
+  renderProduct(products);
 }
 
 // Thêm Function Update cho Edit Version 2
@@ -119,16 +119,17 @@ function handleUpdate() {
     products.splice(index, 1, updateProduct);
   }
 
-  renderProduct();
+  renderProduct(products);
 }
 
 // Thêm function Search
 function handleSearch() {
-  const searchProduct = document.querySelector("#input-search").value;
-  console.log(searchProduct);
+  const searchName = document.querySelector("#input-search").value;
+  console.log(searchName);
 
   const resultFilter = products.filter(function (product) {
-    return product.toLowerCase().includes(searchProduct.toLowerCase());
+    return product.toLowerCase().includes(searchName.toLowerCase());
   });
   console.log(resultFilter);
+  renderProduct(resultFilter);
 }
