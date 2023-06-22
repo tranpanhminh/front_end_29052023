@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/BTL_03.js"></script>
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Bài 1:</legend>
+        <p><b>Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</b></p>
+        <input type="text" placeholder="Type number..." id="input-number">
+        <button onclick="bai_01()">Calculate</button>
+        <input type="text" id="output-number" disabled>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 2:</legend>
+        <p><b>Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được.</b></p>
+        <!-- Tính diện tích hình tròn -->
+        <input type="text" placeholder="Nhập bán kính hình tròn" id="input-circle-radius-01">
+        <button onclick="bai_02_circle_square()">Calculate Circle Square</button>
+        <input type="text" id="output-circle-square" disabled>
+        <br>
+        <br>
+        <!-- Tính chu vi hình tròn -->
+        <input type="text" placeholder="Nhập bán kính hình tròn" id="input-circle-radius-02">
+        <button onclick="bai_02_circle_perimeter()">Calculate Circle Perimeter</button>
+        <input type="text" id="output-circle-perimeter" disabled>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 3:</legend>
+        <p><b>Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</b></p>
+    </fieldset>
+</body>
+
+</html>
