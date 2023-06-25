@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/BT_02.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Gallery</h2>
+    <hr>
+    <section class="search-image">
+        <h3>Tìm kiếm hình ảnh</h3>
+        <div class="group-search">
+            <input type="text" class="search-data">
+            <button class="update-btn" onclick="handleSearch()">Search</button>
+        </div>
+    </section>
+
+    <section class="update-image-section">
+        <h3>Chỉnh sửa hình ảnh</h3>
+        <div class="group-update">
+            <input type="text" class="url-image">
+            <button class="update-btn" onclick="handleUpdate()">Update ảnh</button>
+        </div>
+    </section>
+
+    <section class="add-image-section">
+        <h3>Thêm hình ảnh</h3>
+        <div class="group-add">
+            <input type="text" class="add-url-image">
+            <button class="add-btn" onclick="handleAdd()">Add</button>
+        </div>
+    </section>
+
+    <section class="grid-container">
+        <div class="container-item">
+            <img src="https://cdn.pixabay.com/photo/2023/06/16/11/47/books-8067850_1280.jpg" alt="">
+            <div class="group-btn">
+                <button class="edit-btn btn">Edit</button>
+                <button class="delete-btn btn">Delete</button>
+                <div class="clear"></div>
+            </div>
+
+        </div>
+        <div class="container-item">
+            <img src="https://cdn.pixabay.com/photo/2023/06/11/14/11/flowers-8056102_1280.jpg" alt="">
+            <div class="group-btn">
+                <button class="edit-btn btn">Edit</button>
+                <button class="delete-btn btn">Delete</button>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/BT_02.js"></script>
+</body>
+
+
+</html>
