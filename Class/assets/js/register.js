@@ -125,3 +125,36 @@ function getDataForm() {
     repeatPassword: rePasswordValue,
   };
 }
+
+// Function Login
+function handleLogin() {
+  // B1: Lấy dữ liệu từ form
+  const emailLoginValue = document.querySelector("#email-login").value;
+  const passWordLoginValue = document.querySelector("#password-login").value;
+
+  // B2: Kiểm tra account --> SO sánh với Email và Password có trùng hay không
+
+  let isLogin = false;
+  for (let i = 0; i < accounts.length; i++) {
+    const user = accounts[i];
+    if (
+      user.email === emailLoginValue &&
+      user.password === passWordLoginValue
+    ) {
+      isLogin = true;
+      break;
+    }
+  }
+
+  if (isLogin) {
+    // isLogin === true
+    alert("Đăng nhập thành công");
+    // Điều hướng về page mong muốn
+    // Lưu dữ liệu cần thiết lên LocalStorage
+  } else {
+    alert("Email hoặc Mật khẩu không đúng!");
+  }
+
+  // Nếu trùng --> Vào --> Thông báo
+  // Nếu không trùng --> Vào --> Thông báo
+}

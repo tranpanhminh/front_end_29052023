@@ -56,17 +56,29 @@ function handleLogin() {
     return;
   }
 
+  let isEmailExist = false;
+  let isLoggedIn = false;
+
   for (let i = 0; i < listAccounts.length; i++) {
     if (inputLoginEmail === listAccounts[i].email) {
+      isEmailExist = true;
       if (inputLoginPassword === listAccounts[i].password) {
-        alert("Đăng nhập thành công!");
-        return;
+        isLoggedIn = true;
+        break;
       } else {
         alert("Sai Password! Hãy nhập lại!");
         return;
       }
+    }
+  }
+
+  if (isEmailExist == false) {
+    alert(`Email ${inputLoginEmail} không tồn tại!`);
+  } else {
+    if (isLoggedIn) {
+      alert("Đăng nhập thành công!");
     } else {
-      alert(`Email ${inputLoginEmail} không tồn tại!`);
+      alert("Sai Password! Hãy nhập lại!");
     }
   }
 }
