@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/album-image.css">
+    <title>Album</title>
+</head>
+
+<body>
+    <h2>Gallery</h2>
+    <hr>
+    <div class="tool-editor">
+
+        <div class="search-image mtmb-20">
+            <h3 class="search-image-headline">Tìm kiếm hình ảnh</h3>
+            <br>
+            <input type="text" class="search-image-input">
+            <button class="search-image-btn" onclick="handleSearch()">Tìm kiếm</button>
+        </div>
+
+        <div class="form-edit-image mtmb-20">
+            <h3 class="update-image-headline">Chỉnh sửa hình ảnh</h3>
+            <br>
+            <button class="update-image-btn" onclick="handleUpdate()">Update ảnh</button>
+            <br>
+            <br>
+            <label for="id-image-url">ID</label>
+            <input type="text" class="now-id-image" disabled>
+            <br>
+            <label for="edit-image-url">Image URL</label>
+            <input type="text" class="now-image-url" disabled>
+            <input type="text" class="edit-image-url mtmb-10" id="edit-image-url">
+            <br>
+            <label for="edit-title-image">Title</label>
+            <input type="text" class="now-title-image" disabled>
+            <input type="text" class="edit-title-image mtmb-10" id="edit-title-image">
+            <br>
+            <label for="edit-author-image">Author</label>
+            <input type="text" class="now-author-image" disabled>
+            <input type="text" class="edit-author-image mtmb-10" id="edit-author-image">
+            <br>
+            <label for="edit-price-image">Price</label>
+            <input type="text" class="now-price-image" disabled>
+            <input type="text" class="edit-price-image mtmb-10" id="edit-price-image">
+        </div>
+
+        <div class="form-add-image mtmb-20">
+            <h3 class="add-image-headline">Thêm hình ảnh</h3>
+            <br>
+            <button class="add-image-btn" onclick="handleAdd()">Add ảnh</button>
+            <br>
+            <br>
+            <label for="image-url">Image URL</label>
+            <input type="text" class="add-image-url mtmb-10" id="image-url">
+            <br>
+            <label for="title-image">Title</label>
+            <input type="text" class="title-image mtmb-10" id="title-image">
+            <br>
+            <label for="author-image">Author</label>
+            <input type="text" class="author-image mtmb-10" id="author-image">
+            <br>
+            <label for="price-image">Price</label>
+            <input type="text" class="price-image mtmb-10" id="price-image">
+        </div>
+    </div>
+    <div class="album-container">
+</body>
+<script src="../js/album-image.js"></script>
+
+</html>
