@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 600px;
+        }
+
+        .container>* {
+            border: 2px solid green;
+            height: 200px;
+            background-size: cover;
+        }
+
+        .img-head {
+            background-position: top center;
+            background-image: url("https://phunugioi.com/wp-content/uploads/2020/10/hinh-ve-de-thuong-cute-dang-yeu-don-gian.jpg");
+        }
+
+        .img-body {
+            background-position: center;
+            background-image: url("https://khoinguonsangtao.vn/wp-content/uploads/2022/07/avatar-cute-2.jpg");
+        }
+
+        .img-foot {
+            background-position: bottom center;
+            background-image: url("https://vuagiasu.edu.vn/nhung-hinh-ve-ngo-nghinh/imager_5200.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="img-head" onclick="handleChangeImage('img-head')"></div>
+        <div class="img-body" onclick="handleChangeImage('img-body')"></div>
+        <div class="img-foot" onclick="handleChangeImage('img-foot')"></div>
+    </div>
+
+    <script>
+        const album = [
+            "https://vapa.vn/wp-content/uploads/2022/12/anh-cute-001-1.jpg",
+            "https://khoinguonsangtao.vn/wp-content/uploads/2022/07/avatar-cute-2.jpg",
+            "https://vuagiasu.edu.vn/nhung-hinh-ve-ngo-nghinh/imager_5200.jpg",
+            "https://vapa.vn/wp-content/uploads/2022/12/hinh-de-thuong-don-gian-003.jpg",
+        ];
+        let indexHead = 0;
+        let indexBody = 1;
+        let indexFoot = 2;
+        function handleChangeImage(value) {
+            const imgHead = document.querySelector(".img-head");
+            const imgBody = document.querySelector(".img-body");
+            const imgFoot = document.querySelector(".img-foot");
+
+            if (value === "img-head") {
+                indexHead >= album.length - 1 ? (indexHead = 0) : indexHead++;
+                imgHead.style.backgroundImage = `url(${album[indexHead]})`;
+            }
+            if (value === "img-body") {
+                indexBody >= album.length - 1 ? (indexBody = 0) : indexBody++;
+                imgBody.style.backgroundImage = `url(${album[indexBody]})`;
+            }
+            if (value === "img-foot") {
+                indexFoot >= album.length - 1 ? (indexFoot = 0) : indexFoot++;
+                imgFoot.style.backgroundImage = `url(${album[indexFoot]})`;
+            }
+        }
+    </script>
+</body>
+
+</html>
