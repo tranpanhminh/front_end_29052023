@@ -1,6 +1,7 @@
 // Tạo mảng
 let listAccounts = [];
 
+// Script Signup
 // Function signup
 function handleSignUp() {
   let inputEmail = document.querySelector(".input-email").value;
@@ -38,4 +39,34 @@ function handleSignUp() {
 
   listAccounts.push(account);
   console.log(listAccounts);
+}
+
+// <------------------------>
+// Script Login
+function handleLogin() {
+  let inputLoginEmail = document.querySelector(".input-login-email").value;
+  console.log(inputLoginEmail);
+  let inputLoginPassword = document.querySelector(
+    ".input-login-password"
+  ).value;
+  console.log(inputLoginPassword);
+
+  if (inputLoginEmail == "" || inputLoginPassword == "") {
+    alert("Hãy điền thông tin vào Form!");
+    return;
+  }
+
+  for (let i = 0; i < listAccounts.length; i++) {
+    if (inputLoginEmail === listAccounts[i].email) {
+      if (inputLoginPassword === listAccounts[i].password) {
+        alert("Đăng nhập thành công!");
+        return;
+      } else {
+        alert("Sai Password! Hãy nhập lại!");
+        return;
+      }
+    } else {
+      alert(`Email ${inputLoginEmail} không tồn tại!`);
+    }
+  }
 }

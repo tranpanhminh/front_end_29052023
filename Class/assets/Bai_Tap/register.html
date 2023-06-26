@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="form">
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input type="text" placeholder="Fill an Email" id="email">
+        </div>
+        <div class="form-input">
+            <label for="username">Username</label>
+            <input type="text" placeholder="Fill username" id="username">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+        </div>
+        <div class="form-input">
+            <label for="re-password">Confirm Password</label>
+            <input type="password" id="re-password">
+        </div>
+        <button class="register-btn" onclick="handleRegister()">Register</button>
+        <button class="register-btn" onclick="handleRegister2()">Register 2</button>
+        <button class="register-btn" onclick="handleRegister3()">Register 3</button>
+    </div>
+
+    <div id="form">
+        <div class="form-input">
+            <label for="email">Email</label>
+            <input type="text" placeholder="Fill an Email" id="email-login">
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input type="password" id="password-login">
+        </div>
+        <button class="login-btn" onclick="handleLogin()">Login</button>
+    </div>
+</body>
+<script src="../js/register.js"></script>
+
+</html>
