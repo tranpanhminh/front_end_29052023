@@ -83,7 +83,10 @@ renderAlbum(album);
 
 // Function Delete
 function handleDelete(i) {
+  const deletedTitle = album[i].Title;
   album.splice(i, 1);
+  console.log(i);
+  alert("Đã xóa ảnh: " + deletedTitle);
   renderAlbum(album);
 }
 
@@ -112,6 +115,8 @@ function handleAdd() {
   document.querySelector(".author-image").value = "";
   document.querySelector(".price-image").value = "";
 
+  alert("Đã thêm 1 ảnh mới");
+
   renderAlbum(album);
 }
 
@@ -129,6 +134,9 @@ function handleEdit(i) {
   editTitle.value = album[i].Title;
   editAuthor.value = album[i].Author;
   editPrice.value = album[i].Price;
+
+  let formEditImageShow = document.querySelector(".form-edit-image");
+  formEditImageShow.style.display = "block";
 }
 
 // Function Update
@@ -168,11 +176,17 @@ function handleUpdate(i) {
     album.splice(imageIndex, 1, updateImage);
   }
 
+  let formEditImageHide = document.querySelector(".form-edit-image");
+  formEditImageHide.style.display = "none";
+
+  alert("Đã cập nhật ảnh: " + album[imageIndex].Title);
+
   renderAlbum(album);
 }
 
 // Function Search
 function handleSearch() {
+  let searchResult = document.querySelector(".search-result");
   let inputSearch = document
     .querySelector(".search-image-input")
     .value.toLowerCase();
@@ -188,5 +202,7 @@ function handleSearch() {
     }
   }
 
+  searchResult.innerHTML = `Có ${imageSearch.length} kết quả tìm kiếm`;
+  searchResult.style.display = "block";
   renderAlbum(imageSearch);
 }
