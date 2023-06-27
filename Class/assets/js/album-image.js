@@ -207,6 +207,8 @@ function handleSearch() {
   renderAlbum(imageSearch);
 }
 
+// <-------------------------> //
+
 // Khởi tạo đối tượng
 
 // Cách 1: Object Literals
@@ -279,3 +281,8 @@ const newImageCach4 = new ImageCach4(
 );
 console.log("Ảnh cách 4: ", newImageCach4);
 console.log("Ảnh cách 4: ", newImageCach4.sell());
+
+// In ra thuộc tính của 1 sản phẩm
+for (const keyName in album[0]) {
+  console.log("Thuộc tính: ", keyName, " có giá trị: ", album[0][keyName]); //Không sử dụng dấu chấm vì đang bắt biến keyName. Đối với Object phải dùng for in
+}

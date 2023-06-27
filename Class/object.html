@@ -27,6 +27,7 @@
         }
     };
     console.log("Student 1: ", student);
+
     // Cách 2: Khai báo bằng constructor function
     function Student(studentCode, name, age, address) {
         // Khai báo thuộc tính -- đặc điểm
@@ -139,6 +140,41 @@
 
     // Gán lại giá trị của key khi và chỉ khi đó là Object
     console.log("Student 9 Name là: ", student_9)
+
+
+    // <------------------->
+
+    // Ví dụ
+    // Dùng cách 2: Constractor Function
+    function Product(id, name, price) {
+        // Khai báo thuộc tính
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        // Khai báo hành vi
+        this.getPrice = function () {
+            return this.price;
+        }
+        this.setPrice = function (value) {
+            this.price = value;
+        }
+    }
+    const samsungNote10 = new Product("SSN10", "Samsung Note 10", 12000000);
+    const priceOld = samsungNote10.getPrice();
+    samsungNote10.setPrice(10000000);
+    const priceNew = samsungNote10.getPrice();
+    console.log("Kiểm tra Price Old: ", priceOld,);
+    console.log("Kiểm tra Price New: ", priceNew,);
+    console.log("Sản phẩm Samsung: ", samsungNote10);
+    
+
+    const xiaomi = new Product("X1", "Xiaomi Redmi Note 4", 800000);
+    const priceOldOfXiaomi = xiaomi.getPrice();
+    samsungNote10.setPrice(9000000);
+    const priceNewOfXiaomi = xiaomi.getPrice();
+    console.log("Kiểm tra Price Old of Xiaomi: ", priceOldOfXiaomi,);
+    console.log("Kiểm tra Price New of Xiaomi: ", priceNewOfXiaomi,);
+    console.log("Sản phẩm Xiaomi: ", xiaomi);
 </script>
 
 </html>
