@@ -49,6 +49,10 @@
     console.log("Student 2: ", student_2);
     console.log("Student 2 study: ", student_2.study());
 
+    const student_10 = new Student("SV010", "Trần Thị A", 20, "Hội An");
+    console.log("Student 10: ", student_10);
+    console.log("Student 10 study: ", student_10.study());
+
     // Cách 3: Object
     const student_3 = new Object();
     student_3.name = "Nguyễn Văn C";
@@ -63,7 +67,7 @@
             this.age = age;
             this.address = address;
         }
-
+        // Class thì không có this
         // Khai báo hành vi
         study() {
             return "Learn with Rikkei Academy";
@@ -128,6 +132,12 @@
     for (const index in arr) {
         console.log("STT:", index, "có giá trị là", arr[index])
     }
+
+    // Delete Key
+    // Delete object.key
+    delete student_8.address
+    console.log("Student 8:", student_8)
+
     console.log("Check Array: ", arr)
 
     console.log("Student 8 Age là: ", student_8)
@@ -145,7 +155,7 @@
     // <------------------->
 
     // Ví dụ
-    // Dùng cách 2: Constractor Function
+    // Dùng cách 2: Constructor Function
     function Product(id, name, price) {
         // Khai báo thuộc tính
         this.id = id;
@@ -166,11 +176,11 @@
     console.log("Kiểm tra Price Old: ", priceOld,);
     console.log("Kiểm tra Price New: ", priceNew,);
     console.log("Sản phẩm Samsung: ", samsungNote10);
-    
+
 
     const xiaomi = new Product("X1", "Xiaomi Redmi Note 4", 800000);
     const priceOldOfXiaomi = xiaomi.getPrice();
-    samsungNote10.setPrice(9000000);
+    xiaomi.setPrice(9000000);
     const priceNewOfXiaomi = xiaomi.getPrice();
     console.log("Kiểm tra Price Old of Xiaomi: ", priceOldOfXiaomi,);
     console.log("Kiểm tra Price New of Xiaomi: ", priceNewOfXiaomi,);
