@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    // Có 4 cách để khai báo / Khởi tạo 1 đối tượng
+    // Cách 1: Object Literals
+    const student = {
+        // Khai báo thuộc tính -- đặc điểm
+        studentCode: "SV001",
+        name: "Nguyễn Văn A",
+        age: 18,
+        address: "Cẩm Lệ, Đà Nẵng",
+        // Khai báo hành vi
+        study: function () {
+            return "Learn with RIkkei Academy";
+        },
+        play: function () {
+            return "Play guitar";
+        }
+    };
+    console.log("Student 1: ", student);
+    // Cách 2: Khai báo bằng constructor function
+    function Student(studentCode, name, age, address) {
+        // Khai báo thuộc tính -- đặc điểm
+        this.id = studentCode;
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        // Khai báo hành vi
+        this.study = function () {
+            return "Learn with Rikkei Academy";
+        },
+            this.play = function () {
+                return "Play guitar";
+            }
+    }
+
+    // Tạo đối tượng student
+    const student_2 = new Student("SV002", "Nguyễn Văn B", 20, "Điện Bàn - Quảng Nam");
+    console.log("Student 2: ", student_2);
+    console.log("Student 2 study: ", student_2.study());
+
+    // Cách 3: Object
+    const student_3 = new Object();
+    student_3.name = "Nguyễn Văn C";
+    student_3.age = 21;
+    console.log("Student 3: ", student_3);
+
+    // Cách 4: class
+    class Student_class {
+        constructor(studentCode, name, age, address) {
+            this.id = studentCode;
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+
+        // Khai báo hành vi
+        study() {
+            return "Learn with Rikkei Academy";
+        };
+
+        // Tương tự study = function () {return "Learn with Rikkei Academy";}
+
+        play() {
+            return "Play guitar";
+        };
+    }
+
+    // Khởi tạo student_4
+    const student_4 = new Student_class('SV004', "Nguyễn Văn D", 20, "Hải Châu - Đà Nẵng");
+    console.log("Student 4: ", student_4);
+
+    const student_5 = new Student("SV005", "Nguyễn Văn F", 22, "Điện Bàn - Quảng Nam");
+
+    console.log("Student 5 before: ", student_5)
+    const student_6 = student_5;
+    student_6.age = 30;
+    student_6.gender = true;
+    console.log("Student 5 after: ", student_5)
+    console.log("Student 6: ", student_6)
+    // Đây là tính chất của dữ liệu tham chiếu, nếu cho student_6 = student_5 mà thêm key hay thay đổi giá trị của student_6 thì nó cũng áp dụng cho student_5
+
+
+    // Cách copy object
+    // Cách 1: Dùng spread -- ES6
+    const student_7 = { ...student_5 } //Bắt buộc phải đồng nhất đối tượng
+    student_7.name = "Hello World";
+    console.log("Student 5:", student_5);
+    console.log("Student 7:", student_7);
+
+    // Cách 2: Dùng JSON
+    // JSON.parse --> Chuyển kiểu JSON về kiểu ban đầu của nó
+    // JSON.stringify ----> Chuyển dữ liệu ban đầu thành kiểu JSON
+
+    const student_8 = JSON.parse(JSON.stringify(student_5));
+    console.log("Student 5:", student_5);
+    console.log("Student 8: ", student_8);
+
+    // Cách 3: Assign --> Object --> Gộp key
+    const student_9 = Object(student_5, {})
+    console.log("Student 5:", student_5);
+    console.log("Student 9: ", student_9);
+
+    // Truy xuất dữ liệu và gán đối tượng
+    // Cách 1: Object.key
+    student_9.name = "Nguyễn Văn N";
+    // Cách 2: Object["key"]
+    const keyName = "age";
+    student_8[keyName] = 60;
+    student_8.keyName = 70;
+
+    // for in --> Lấy được Key của Object
+    for (const keyName in student_8) {
+        console.log("Kiểm tra Key là: ", keyName, " có giá trị là: ", student_8[keyName])
+    }
+
+    const arr = [1, 4, 5, 7];
+    for (const index in arr) {
+        console.log("STT:", index, "có giá trị là", arr[index])
+    }
+    console.log("Check Array: ", arr)
+
+    console.log("Student 8 Age là: ", student_8)
+
+    // Const valueElement = element.value --> valueElement.value = 10;
+    const studentName_9 = student_9.name;
+
+    // studentName.name = "Nguyễn Văn M" ---> Sai hoàn toàn
+
+
+    // Gán lại giá trị của key khi và chỉ khi đó là Object
+    console.log("Student 9 Name là: ", student_9)
+</script>
+
+</html>
+
+<!-- this.study = function () 
+    = function study() -->

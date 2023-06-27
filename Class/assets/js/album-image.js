@@ -206,3 +206,76 @@ function handleSearch() {
   searchResult.style.display = "block";
   renderAlbum(imageSearch);
 }
+
+// Khởi tạo đối tượng
+
+// Cách 1: Object Literals
+
+let imageCach1 = {
+  ImageUrl:
+    "https://cdn.pixabay.com/photo/2023/06/16/11/47/books-8067850_1280.jpg",
+  Title: "Ảnh 1",
+  Author: "John Smith",
+  Price: 500,
+  sell: function () {
+    return "Ảnh này bán chạy nhất!";
+  },
+};
+console.log("Ảnh cách 1: ", imageCach1);
+console.log("Ảnh cách 1: ", imageCach1.sell());
+
+// Cách 2: Khai báo bằng constructor function
+function ImageCach2(ImageUrl, Title, Author, Price) {
+  // Khai báo thuộc tính -- đặc điểm
+  this.ImageUrl = ImageUrl;
+  this.Title = Title;
+  this.Author = Author;
+  this.Price = Price;
+  this.sell = function () {
+    return "Đã bán";
+  };
+}
+
+const newImage2 = new ImageCach2(
+  "https://cdn.pixabay.com/photo/2023/06/16/11/47/books-8067850_1280.jpg",
+  "Ảnh Vip",
+  "Tony",
+  800
+);
+console.log("Ảnh cách 2: ", newImage2);
+console.log("New Image 2 sell: ", newImage2.sell());
+
+// Cách 3: Object
+const imageCach3 = new Object();
+imageCach3.ImageUrl =
+  "https://cdn.pixabay.com/photo/2023/06/16/11/47/books-8067850_1280.jpg";
+imageCach3.Title = "Ảnh Pro";
+imageCach3.Author = "Mark";
+imageCach3.Price = 500;
+imageCach3.sell = function () {
+  return "Đã bán ảnh này";
+};
+console.log("Ảnh cách 3: ", imageCach3);
+
+// Cách 4
+class ImageCach4 {
+  constructor(ImageUrl, Title, Author, Price) {
+    this.ImageUrl = ImageUrl;
+    this.Title = Title;
+    this.Author = Author;
+    this.Price = Price;
+  }
+
+  sell() {
+    return "Ảnh này đã bán";
+  }
+}
+
+const newImageCach4 = new ImageCach4(
+  "https://cdn.pixabay.com/photo/2023/06/16/11/47/books-8067850_1280.jpg",
+  "Ảnh Good",
+  "Kevin",
+  200
+);
+console.log("Ảnh cách 4: ", newImageCach4);
+console.log("Ảnh cách 4: ", newImageCach4.sell());
