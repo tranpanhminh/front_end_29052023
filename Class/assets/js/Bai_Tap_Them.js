@@ -53,42 +53,94 @@ function checkEmpty_02(obj) {
 
 // Script bài 4
 function bai_04() {
-  let widthValue = Number(prompt("Nhập giá trị Width: "));
-  let heightValue = Number(prompt("Nhập giá trị Width: "));
-  let titleValue = prompt("Nhập giá trị Title: ");
-
-  let menu = new Menu(widthValue, heightValue, titleValue);
-  console.log("Nhân 2 giá trị Number của 2 số mới là: ", menu.getMul());
-
-  let newWidthValue = Number(prompt("Nhập giá trị Width mới: "));
-  let newHeightValue = Number(prompt("Nhập giá trị Height mới: "));
-
-  menu.setWidth(newWidthValue);
-  menu.setWidth(newHeightValue);
-  menu.printer();
+  const menu = {
+    width: 10,
+    height: 20,
+    title: "Hello",
+  };
 }
-function Menu(width, height, title) {
-  this.width = width;
-  this.height = height;
-  this.title = title;
 
-  this.getMul = function () {
-    return this.width * this.height;
+const result = multi(menu);
+console.log("Check:", result);
+
+function multi(obj) {
+  let mul = 1;
+  for (const key in obj) {
+    if (typeof obj[key] === "number") {
+      mul *= obj[key];
+    }
+  }
+  return mul;
+}
+
+// function bai_04() {
+//   let widthValue = Number(prompt("Nhập giá trị Width: "));
+//   let heightValue = Number(prompt("Nhập giá trị Width: "));
+//   let titleValue = prompt("Nhập giá trị Title: ");
+
+//   let menu = new Menu(widthValue, heightValue, titleValue);
+//   console.log("Nhân 2 giá trị Number của 2 số mới là: ", menu.getMul());
+
+//   let newWidthValue = Number(prompt("Nhập giá trị Width mới: "));
+//   let newHeightValue = Number(prompt("Nhập giá trị Height mới: "));
+
+//   menu.setWidth(newWidthValue);
+//   menu.setWidth(newHeightValue);
+//   menu.printer();
+// }
+
+// function Menu(width, height, title) {
+//   this.width = width;
+//   this.height = height;
+//   this.title = title;
+
+//   this.getMul = function () {
+//     return this.width * this.height;
+//   };
+
+//   this.setWidth = function (newWidth) {
+//     this.width = newWidth;
+//   };
+//   this.setHeight = function (newHeight) {
+//     this.width = newHeight;
+//   };
+//   this.getWidth = function () {
+//     return this.width;
+//   };
+//   this.getHeight = function () {
+//     return this.height;
+//   };
+//   this.printer = () => {
+//     console.log("Nhân 2 giá trị Number là: ", this.getMul());
+//   };
+// }
+
+// <---------------->
+
+// Script bài 5
+function bai_05() {
+  const menu = {
+    width: 10,
+    height: 20,
+    title: "Hello",
   };
 
-  this.setWidth = function (newWidth) {
-    this.width = newWidth;
-  };
-  this.setHeight = function (newHeight) {
-    this.width = newHeight;
-  };
-  this.getWidth = function () {
-    return this.width;
-  };
-  this.getHeight = function () {
-    return this.height;
-  };
-  this.printer = () => {
-    console.log("Nhân 2 giá trị Number là: ", this.getMul());
-  };
+  class Computer {
+    // Hàm tạo
+    constructor(a, b) {
+      this.a = a;
+      this.b = b;
+    }
+    read() {
+      console.log(a, b);
+    }
+    sum() {
+      return this.a + this.b;
+    }
+    multi() {
+      return this.a * this.b;
+    }
+  }
+
+  const computer_1 = new Computer(1, 5);
 }
