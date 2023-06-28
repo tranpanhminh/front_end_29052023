@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Bài tập:
+        </legend>
+        <p>Viết một ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva. Adam và Eva là những con người đầu tiên, trong vườn
+            địa đàng có một cây táo ra những quả táo chín mọng. Adam và Eva lấy một quả táo và ăn, mỗi người ăn một
+            miếng táo cho đến khi hết!</p>
+        <p>Yêu cầu bài <a href="https://prnt.sc/wymVdWPUGgyH" target="_blank">xem tại đây</a></p>
+        <button onclick="bai_01()">Run</button>
+        <h3>Kết quả:</h3>
+        <div class="result-01"></div>
+        <table cellpadding="10">
+            <caption>HUMAN</caption>
+            <tr>
+                <th></th>
+                <th>Tên</th>
+                <th>Kiểu dữ liệu</th>
+            </tr>
+            <tr>
+                <td rowspan="3">Thuộc tính</td>
+                <td>Name</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>Number</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>Boolean</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Hành vi</td>
+                <td>eat: (Fruit) => {}</td>
+                <td>Phải biết ăn gì</td>
+            </tr>
+        </table>
+        <br>
+        <table cellpadding="10">
+            <caption>FRUIT</caption>
+            <tr>
+                <th></th>
+                <th>Tên</th>
+                <th>Kiểu dữ liệu</th>
+            </tr>
+            <tr>
+                <td rowspan="3">Thuộc tính</td>
+                <td>Name</td>
+                <td>String</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>Number</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>Boolean</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Hành vi</td>
+                <td>getWeight()</td>
+                <td>Kiểm tra khối lượng thức ăn</td>
+            </tr>
+            <tr>
+                <td>decrease()</td>
+                <td>-- Giảm khối lượng thức ăn xuống 1 đơn vị</td>
+            </tr>
+        </table>
+        <br>
+        <button onclick="handleEat()">Adam Eats Apple</button>
+    </fieldset>
+</body>
+<script src="../assets/js/adam-eva.js"></script>
+
+</html>

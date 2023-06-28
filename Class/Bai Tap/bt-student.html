@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student</title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellpadding="10">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã số SV</th>
+                <th>Tên sinh viên</th>
+                <th>Điểm</th>
+                <th>Xếp loại</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>STT</td>
+                <td>Mã số SV</td>
+                <td>Tên sinh viên</td>
+                <td>Điểm</td>
+                <td>Xếp loại</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // Bài 1: Tạo mô hình đối tượng
+        class Student {
+            constructor(studentID, name, age, address, gender, mark) {
+                this.studentID = studentID;
+                this.name = name;
+                this.age = age;
+                this.address = address;
+                this.gender = gender;
+                this.mark = mark;
+                this.rank = "";
+            }
+            getRank() {
+                // Kiểm tra và tạo rank cho sinh viên
+                if (this.mark >= 8) {
+                    this.rank = "Giỏi";
+                } else if (this.mark >= 7) {
+                    this.rank = "Khá";
+                } else if (this.mark >= 5) {
+                    this.rank = "Trung bình";
+                } else {
+                    this.rank = "Yếu";
+                }
+                return this.rank;
+            }
+        }
+
+        //Bài 2:   Tạo danh sách học sinh
+        const students = [
+            new Student("SV001", "Nguyễn Văn A", 18, "Đà Nẵng", true, 9),
+            new Student("SV002", "Nguyễn Văn B", 18, "Đà Nẵng", true, 7),
+            new Student("SV003", "Nguyễn Văn C", 19, "Đà Nẵng", true, 9),
+            new Student("SV004", "Nguyễn Văn D", 18, "Đà Nẵng", true, 5),
+            new Student("SV005", "Nguyễn Văn E", 19, "Đà Nẵng", true, 6),
+        ];
+
+        //  Bài 3: Tìm những sinh viên có điểm cao nhất và in ra
+        const studentMax = findMarkMax(students);
+        console.log("Những sinh viên có điểm cao nhất", studentMax);
+        function findMarkMax(data) {
+            let studentMax = [];
+            let markMax = 0;
+
+            // Lặp qua từng data để tìm điểm cao nhất
+
+            for (let i = 0; i < data.length; i++) {
+                if (data[i].mark > markMax) {
+                    markMax = data[i].mark;
+                }
+            }
+
+            // Thêm tất cả sinh viên có điểm cao vào mảng
+            data.forEach((item) => {
+                if (item.mark === markMax) {
+                    // sinh viên có điểm bằng max sẽ được thêm vào mảng
+                    studentMax.push(item);
+                }
+            });
+
+            return studentMax;
+        }
+
+        //   Bài 4: Kiểm tra rank
+        students.forEach((student) => {
+            console.log(
+                "Xếp loại của sinh viên có mã số",
+                student.studentID,
+                " là: ",
+                student.getRank()
+            );
+        });
+
+        function renderData() {
+            // B1: Element cần thay đổi
+
+            const tbodyElement = document.querySelector("tbody");
+
+            let tbodyContent = "";
+            // B2: Lấy nội dung
+            students.forEach((student, index) => {
+                tbodyContent += `<tr>
+          <td>${index + 1}</td>
+          <td>${student.studentID}</td>
+          <td>${student.name}</td>
+          <td>${student.mark}</td>
+          <td>${student.rank}</td>
+        </tr>`;
+            });
+
+            // B3: gán lại nội dung hiển thị
+            tbodyElement.innerHTML = tbodyContent;
+        }
+        renderData();
+    </script>
+</body>
+
+</html>
