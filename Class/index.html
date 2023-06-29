@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 20: ES6</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Spread</legend>
+        <h3>Copy nội dung các phần tử trong mảng Array hoặc Object</h3>
+        <button onclick="getSpread()">Click</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Rest</legend>
+        <h3>Lấy phần còn lại trong mảng Array hoặc Object</h3>
+        <button onclick="getRest()">Click</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Destructuring</legend>
+        <h3>Lấy 1 phần tử trong mảng hoặc Key trong object</h3>
+        <button onclick="getDestructuring()">Click</button>
+    </fieldset>
+
+    <script>
+        // Tham số mặc định
+        function sum(a, b = 0) {
+            // Khi b không được truyền vào khi gọi hàm hoặc b bằng undefined
+            return a + b;
+        }
+        const sumNumber = sum(1);
+
+        function renderData(data = []) {
+            data.forEach((element) => {
+                console.log("Element", element)
+            })
+        }
+        renderData();
+
+
+        function getSpread() {
+            const number = [1, 4, 5, 7];
+            // Spread --> Copy lại mảng hoặc Object
+            number2 = [...number] // bọc lại Array hoặc Object tương ứng
+            number2[1] = 1000;
+            console.log("Check Number 2: ", number);
+            console.log("Check Number 2: ", number2);
+        }
+
+
+        function getRest() {
+            // Rest --> Lấy phần còn lại (Hữu ích khi dùng function)
+            function sumData(a, b, ...other) { // other đặt tên tùy thích 
+                // arguments
+                console.log("Kiểm tra a:", a);
+                console.log("Kiểm tra b:", b);
+                console.log("Kiểm tra other:", other); // Lấy ra tất cả các phần tử còn lại ngoại trừ phần tử a,b mà không phải gọi từng biến
+            }
+
+            sumData(1, 3, 5, 6, 7, 321321, 12, 213, 3213, 321);
+
+            function sumNumbers(...data) {
+                let sum = 0;
+                for (let i = 0; i < data.length; i++) {
+                    const number = data[i];
+                    // Cộng từng phần tử vào Sum
+                    sum += number;
+                }
+                return sum;
+            }
+            const sum_1 = sumNumbers(1, 2);
+            const sum_2 = sumNumbers(1, 3, 4, 6, 7);
+
+            console.log("Kết quả sum 1: ", sum_1);
+            console.log("Kết quả sum 2: ", sum_2);
+
+
+            // Sự kết hợp giữa Rest và Destructuring
+            function getStudent({ id, name, ...other }) {
+                console.log(id, name, other);
+            }
+            const student = { id: 1, name: "Trần Văn A", age: 18, address: "Đà Nẵng", gender: true };
+            const student_2 = { id: 2, name: "Trần Văn B", age: 20, address: "Đà Lạt", gender: true }
+
+            getStudent(student);
+            getStudent(student_2);
+        }
+
+        // get Destructuring
+        function getDestructuring() {
+            const student = {
+                id: 1,
+                name: "Nguyễn Văn A",
+                age: 18,
+                address: "ĐN"
+            }
+
+            const nameStudent = student.name;
+            const ageStudent = student.age;
+            // Thay vì viết như trên có thể làm như sau
+            const { address, id } = student;
+            console.log("Student", nameStudent, ageStudent, address, id)
+
+            const animal = ["dog", "cat", "pig"];
+            const [a, b, c] = animal;
+            console.log("Animal", a, b, c)
+
+        }
+    </script>
+</body>
+
+</html>
