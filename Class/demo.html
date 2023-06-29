@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Demo</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Bài 1: </legend>
+        <h3>Câu a: Cho 1 mảng sinh viên, thay đổi địa chỉ của sinh viên SV03 thành Cần Thơ và Class thành RA_02</h3>
+        <button onclick="bai_01_C1()">Bài 1 - Cách 1</button>
+        <button onclick="bai_01_C2()">Bài 1 - Cách 2</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 2: </legend>
+        <h3>Viết hàm tính tổng của 3 số nhập vào, tính tổng 5 số nhập vào, n số nhập vào</h3>
+        <button onclick="bai_02_C1()">Tính tông 3 số</button>
+        <button onclick="bai_02_C2()">Tính tông 5 số</button>
+        <button onclick="bai_02_C3()">Tính tông n số</button>
+        <br>
+        <br>
+        <button onclick="bai_02_cach2()">Cách 2</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 3: </legend>
+        <h3>Viết chương trình chuyển đổi tạo mã đơn hàng</h3>
+        <p>Ví dụ: convertCode(1,4,5,6) -> Mã đơn hàng [{code: SP_1},{code: SP_4},{code: SP_5},{code: SP_6}</p>
+        <button onclick="bai_03_cach_1()">Cách 1</button>
+        <button onclick="bai_03_cach_2()">Cách 2</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 4: </legend>
+        <h3>Viết chương trình nhập tạo store bằng cách thêm vào sản phẩm</h3>
+        <p>Chuyển đổi thành mảng chứa 1 dối tượng sản phẩm có ID name, quantity</p>
+        <p>Ví dụ: inputProduct("Samsung","apple","xiaomi") -> [{id: "SP_1", name:"Samsung", quantity:20},{id: "SP_2",
+            name:"Apple",quantity:20},{id: "SP_3", name:"Xiaomi",quantity:20}]</p>
+        <button onclick="bai_04()">Run</button>
+        <button onclick="bai_04_cach_2()">Run</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Bài 5: </legend>
+        <h3>Tạo 2 mô hình đối tượng Animal có thuộc tính Weight, Speed, Food, Type, Pet có thuộc tính kế thừa từ Animal
+            và có thêm thuộc tính name, hobby</h3>
+        <button onclick="bai_05()">Run</button>
+    </fieldset>
+</body>
+<script src="../assets/js/demo.js"></script>
+
+</html>

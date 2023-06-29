@@ -48,7 +48,18 @@
         <h3>Lấy 1 phần tử trong mảng hoặc Key trong object</h3>
         <button onclick="getDestructuring()">Click</button>
     </fieldset>
-
+    <br>
+    <fieldset>
+        <legend>Ví dụ Spread</legend>
+        <h3>Chó mèo</h3>
+        <button onclick="vi_du_spread()">Click</button>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Class</legend>
+        <h3>Ví dụ về Class</h3>
+        <button onclick="getClass()">Click</button>
+    </fieldset>
     <script>
         // Tham số mặc định
         function sum(a, b = 0) {
@@ -133,6 +144,80 @@
             console.log("Animal", a, b, c)
 
         }
+
+        // Ví dụ về Spread
+        function vi_du_spread() {
+            const dogs = ["Kiki", "Lu", "Bon"];
+            const cats = ["Chó", "Mimi", "Nana", "Oke", "Good"];
+            const pets = [...dogs, ...cats] // Hoặc dogs.concat(cats)
+            console.log("Các Pets:", pets)
+
+            // Lấy hết 3 chó và bỏ 2 mèo đầu
+            // Dùng Destructuring kết hợp với Rest
+            const [a, b, ...otherCat] = cats
+            console.log("Tổng Cat:", cats)
+            console.log("Tổng Cat còn lại ngoại trừ 2 con đầu:", otherCat)
+            console.log("Tổng Cat còn lại ngoại trừ 2 con đầu:", ...otherCat)
+            const pets_2 = [...dogs, ...otherCat]
+            console.log("Tổng 3 chó và bỏ 2 mèo đầu là: ", pets_2)
+        }
+
+        // Arrow Function -> Return 1 kết quả mà không thực thi khối lệnh trước đó
+        const sumN = (a, b) => a + b;
+        // Cấu trúc tương tự
+        const sum_2 = (a, b) => {
+            // Khối lệnh thực thi
+
+            // return
+            return a + b
+        };
+
+        // Khi trả về đối tượng và return rút gọn
+        const convertData = (name, age) => ({ name: name, age: age });
+        console.log(convertData, typeof convertData)
+
+        // Cách 2:
+
+        const convertData_2 = (name, age) => { return { name: name, age: age } };
+        console.log(convertData_2, typeof convertData_2)
+
+
+        // Cách 3:
+        const convertData_3 = (name, age) => ({ name, age });
+        console.log(convertData_3, typeof convertData_3)
+
+
+        // Arrow Function không có this
+
+        // Class
+        function getClass() {
+            class Person {
+                constructor(name, age, gender, hobby) {
+                    this.name = name;
+                    this.age = age;
+                    this.gender = gender;
+                    this.hobby = hobby;
+                }
+            }
+
+            class User extends Person {
+                constructor(name, age, gender, hobby, email, password) {
+                    super(name, age, gender, hobby);
+                    this.email = email;
+                    this.password = password;
+                }
+                getInfo = () => ({ name: this.name, age: this.age, gender: this.gender, hobby: this.hobby, });
+                getAccount = () => ({ email: this.email, password: this.password })
+            }
+
+            const person = new Person("Nguyễn Văn A", 20, true, "Game");
+            const user = new User("Nguyễn Văn B", 21, false, "Guitar", "b@gmail.com", "1234");
+
+            console.log("Kiểm tra Person: ", person);
+            console.log("Kiểm tra User: ", user);
+        }
+
+
     </script>
 </body>
 
