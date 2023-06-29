@@ -17,6 +17,8 @@ function bai_04() {
       pressU();
     } else if (inputValue === "D") {
       pressD();
+    } else {
+      alert("Nhập sai hãy nhập lại!");
     }
   }
   alert("Cảm ơn bạn đã đến với Rikkei Academy");

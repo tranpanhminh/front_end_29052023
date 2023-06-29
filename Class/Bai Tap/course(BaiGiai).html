@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4: CRUD - Session 19 - Object</title>
+</head>
+
+<body>
+    <button onclick="inputData()">Click để nhập</button>
+    <script>
+        const courses = [new Course("Javascript", false), new Course("PHP", true)]; // Ngoài global
+
+        // Người dùng nhập thông tin vào
+        function inputData() {
+            let stopLoop = true;
+            while (stopLoop === false) {
+                let type = prompt("Nhập C / R / U / D / E để thêm, sửa, xóa dữ liệu");
+                if (type === "C") {
+                    // function create
+                    createCourse();
+                } else if (type === "R") {
+                    // function read
+                    readCourse();
+                } else if (type === "U") {
+                    // function update
+                    updateCourse();
+                } else if (type === "D") {
+                    // function delete
+                    deleteCourse();
+                } else if (type === "E") {
+                    // function vòng lặp
+                    stopLoop != stopLoop;
+                    alert("Cảm ơn đã đến với Rikkei Academy!")
+                } else {
+                    alert("Nhập sai, vui lòng nhập lại C / R / U / D / E")
+                }
+            }
+        }
+
+        // Function Create
+        function createCourse() {
+            // Nhập thông tin
+            const courseName = prompt("Nhập tên môn học: ");
+            const courseStatus = prompt("Nhập trạng thái môn học (Nhập true hoặc false): ", true);
+            const convertBoolean = courseStatus === "true" ? true : false;
+            // Validate dữ liệu -> Tên khóa học không được trùng 
+
+            // Tạo 1 khóa học mới
+            const newCourse = new Course(courseName, convertBoolean)
+
+            // Thêm dữ liệu vào database
+            courses.push(newCourse);
+            console.log("Kiểm tra data: ", courses)
+
+        }
+
+        // Function Read
+        function readCourse() {
+            courses.forEach(course => console.log("Tên khóa học" + course.name + "Và trạng thái: " + course.status))
+        }
+        //  Tạo mô hình 1 môn học
+        function Course(name, status) {
+            this.name = name;
+            this.status = status;
+        }
+
+        // Function Update
+        function updateCourse() {
+            const position = Number(prompt("Vui lòng nhập vị trí muốn sửa:")) // Thực tế bắt đầu từ 1 --> Index phải trừ 1
+            const index = position - 1;
+            if (index < 0 || index - 1 >= courses.length) {
+                alert("Vị trí: " + position + " không tồn tại! Vui lòng nhập lại!");
+                return;
+            };
+
+            const courseName = prompt("Nhập tên môn học: ");
+            const courseStatus = prompt("Nhập trạng thái môn học (Nhập true hoặc false): ", true);
+            const convertBoolean = courseStatus === "true" ? true : false;
+
+            const newCourse = new Course(courseName, convertBoolean)
+
+            for (let i = 0; i < courses.length; i++) {
+                if (i === index) {
+                    courses.splice(index, 1, newCourse);
+                    break;
+                }
+            }
+            // In ra kết quả
+            readCourse();
+        }
+
+        // Function Delete
+        function deleteCourse() {
+            function update() {
+                const position = Number(prompt("Vui lòng nhập vị trí muốn xóa:")) // Thực tế bắt đầu từ 1 --> Index phải trừ 1
+                const index = position - 1;
+                if (index < 0 || index - 1 >= courses.length) {
+                    alert("Vị trí: " + position + " không tồn tại! Vui lòng nhập lại!");
+                    return;
+                };
+
+                for (let i = 0; i < courses.length; i++) {
+                    if (i === index) {
+                        courses.splice(index, 1);
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
