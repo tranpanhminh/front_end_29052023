@@ -1,0 +1,199 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h3 {
+    text-align: center;
+    padding: 30px;
+    background-color: burlywood;
+    width: 25%;
+    margin: 40px auto;
+    border-radius: 10px;
+    font-size: 30px
+}
+
+.product-name {
+    color: green;
+    font-size: 23px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.product-name {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.product-count {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.group-btn-store {
+    text-align: center;
+}
+
+.add-btn {
+    background-color: #89ae58;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #044692;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.add-product-btn {
+    background-color: #09aeae;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-product-btn {
+    background-color: #d72503;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.edit-product-btn {
+    background-color: #31b0d5;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: red;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-product-to-store {
+    background-color: #eb961f;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.update-product-to-store {
+    background-color: #eb961f;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 85%;
+}
+
+body {
+    background-color: #e2e9ef;
+}
+
+.product-item {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.store-container,
+.cart-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 50px;
+    margin: 40px 300px
+}
+
+.form-add-product-to-store {
+    background-color: beige;
+    margin: 50px auto;
+    width: 500px;
+    padding: 20px 20px;
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+label {
+    width: 250px;
+    display: inline-block;
+}
+
+input {
+    width: 200px;
+    padding: 10px;
+}
+
+.form-edit-product-to-store {
+    background-color: beige;
+    margin: 50px auto;
+    width: 700px;
+    padding: 20px 20px;
+    line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}

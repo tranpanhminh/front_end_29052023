@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/cart.css">
+</head>
+
+<body>
+    <h3>
+        CỬA HÀNG
+    </h3>
+    <div class="group-btn-store">
+        <button class="add-product-btn" onclick="handleAddProductToStore()">Thêm sản phẩm</button>
+        <button class="edit-product-btn" onclick="handleEditProductToStore()">Chỉnh sửa sản phẩm</button>
+        <button class="delete-product-btn">Xóa sản phẩm</button>
+    </div>
+    <div class="form-add-product-to-store">
+        <h4>Nhập sản phẩm bạn muốn thêm</h4>
+        <div>
+            <label for="input-image-url">Nhập Link ảnh sản phẩm</label>
+            <input type="text" placeholder="" id="input-image-url">
+        </div>
+        <div>
+            <label for="input-product-name">Nhập tên sản phẩm</label>
+            <input type="text" placeholder="" id="input-product-name">
+        </div>
+        <div>
+            <label for="input-product-name">Số lượng sản phẩm bạn muốn nhập</label>
+            <input type="number" placeholder="" id="input-product-quantity" min="0">
+        </div>
+        <button class="add-product-to-store" onclick="uploadProduct()">Add Product To Store</button>
+    </div>
+
+    <!-- <div class="form-edit-product-to-store">
+        <h4>Nhập sản phẩm bạn muốn chỉnh sửa</h4>
+        <select name="" id="" class="drop-list-product" onclick="dropList()">
+        </select>
+        <div>
+            <label for="update-product-id">ID</label>
+            <input type="text" placeholder="" id="update-image-url" disabled>
+        </div>
+        <div>
+            <label for="update-image-url">Link ảnh</label>
+            <input type="text" placeholder="" id="update-image-url" disabled>
+            <input type="text" placeholder="" id="update-image-url">
+        </div>
+        <div>
+            <label for="update-product-name">Nhập tên sản phẩm</label>
+            <input type="text" placeholder="" id="update-product-name" disabled>
+            <input type="text" placeholder="" id="update-product-name">
+        </div>
+        <div>
+            <label for="update-product-quantity">Số lượng sản phẩm</label>
+            <input type="number" placeholder="" id="update-product-quantity" min="0" disabled>
+            <input type="number" placeholder="" id="update-product-quantity" min="0">
+        </div>
+        <button class="update-product-to-store" onclick="updateProduct()">Update Product To Store</button>
+    </div> -->
+
+    <!-- <div class="form-add-product-to-store">
+        <h4>Nhập sản phẩm bạn muốn chỉnh sửa</h4>
+        <div>
+            <label for="input-image-url">Nhập Link ảnh sản phẩm</label>
+            <input type="text" placeholder="" id="input-image-url">
+        </div>
+        <div>
+            <label for="input-product-name">Nhập tên sản phẩm</label>
+            <input type="text" placeholder="" id="input-product-name">
+        </div>
+        <div>
+            <label for="input-product-name">Số lượng sản phẩm bạn muốn nhập</label>
+            <input type="number" placeholder="" id="input-product-quantity" min="0">
+        </div>
+        <button class="add-product-to-store" onclick="uploadProduct()">Add Product To Store</button>
+    </div> -->
+
+    <div class="store-container">
+    </div>
+    <h3>
+        Giỏ hàng
+    </h3>
+    <div class="line"></div>
+    <div class="cart-container">
+        <div class="product-item">
+            <img src="https://cdn.tgdd.vn/Products/Images/2386/76884/bhx/sttt-vinamilk-dan-bo-cd-110ml-2-700x467.jpg"
+                alt="">
+            <h4 class="product-name">Milk</h4>
+            <h4 class="product-count">Quantity: 100</h4>
+            <div class="group-btn-buyer">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="https://cdn.tgdd.vn/Products/Images/2386/76884/bhx/sttt-vinamilk-dan-bo-cd-110ml-2-700x467.jpg"
+                alt="">
+            <h4 class="product-name">Yakult</h4>
+            <h4 class="product-count">Quantity: 100</h4>
+            <div class="group-btn-buyer">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="https://thucphammeli.com/wp-content/uploads/2020/07/38a.jpg" alt="">
+            <h4 class="product-name">Butter</h4>
+            <h4 class="product-count">Quantity: 100</h4>
+            <div class="group-btn-buyer">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+        <div class="product-item">
+            <img src="https://thucphammeli.com/wp-content/uploads/2020/07/38a.jpg" alt="">
+            <h4 class="product-name">Butter</h4>
+            <h4 class="product-count">Quantity: 100</h4>
+            <div class="group-btn-buyer">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../assets/js/cart.js"></script>
+
+</html>

@@ -1,5 +1,5 @@
 // Cách 1: Export theo tên
-const students = [
+export const students = [
   {
     id: "SV1",
     name: "Nguyễn Văn A",

@@ -219,6 +219,17 @@
 
 
     </script>
+    <script type="module">
+        // Khi Import --> Object --> Name trùng với name khai báo bên Export
+        import { students } from "../assets/js/database.js";
+        import dataBase from "../assets/js/database.js";
+        function handleClick() {
+            alert("Hello World")
+        }
+        window.handleClick = handleClick;
+
+        console.log("Kiểm tra Student: ", students)
+    </script>
 </body>
 
 </html>

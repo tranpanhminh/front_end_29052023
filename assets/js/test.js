@@ -1,19 +1,15 @@
-function bai_04() {
-    function inputProduct(...productsName) {
-      const listProducts = [];
-      productsName.forEach((product, i) => {
-        const code = `SP_${i + 1}`;
-        const name = product;
-        const quantity = 20;
-        const productObj = {
-          code: code,
-          name: name,
-          quantity: quantity,
-        };
-        listProducts.push(productObj);
-      });
-      return listProducts;
-    }
-    const convertArray = inputProduct("Samsung", "Apple", "Xiaomi");
-    console.log("Kết quả Code: ", convertArray);
-  }
+let array = ["Javascript", "PHP", "ReactJS", "NodeJs"];
+// Lấy ra vị trí thứ nhất và phần còn lại
+let [a, ...rest] = array;
+console.log(a);
+console.log(rest);
+
+let listObject = {
+  name:  "Javescript",
+  price: 1000,
+  status: "active",
+};
+
+let {name, ...restt} = listObject;
+console.log(name)
+console.log(restt)
