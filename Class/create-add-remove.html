@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 21: DOM & Event</title>
+</head>
+
+<body>
+    <button onclick="handleChangeTitle()">Change Title</button>
+    <table>
+
+    </table>
+
+
+    <section>
+        <h3>Phần tử cần gỡ bỏ</h3>
+        <h3 class="remove">Phần tử cần thay thế</h3>
+    </section>
+</body>
+<script>
+    const tableElement = document.querySelector("table");
+    const trElement = document.createElement('tr'); // Tạo thẻ
+    console.log(trElement);
+
+    // tr thêm vào Table
+
+    // Tạo td
+    const tdElement = document.createElement("td");
+    tdElement.innerHTML = "Đà Nẵng";
+
+    // appendChild()
+
+    tableElement.appendChild(trElement);
+    console.log("Kiểm tra Table: ", tableElement);
+
+    trElement.appendChild(tdElement);
+
+    // Gỡ bỏ phần tử h3 khỏi section
+    const h3Element = document.querySelector("section h3");
+    const sectionElement = document.querySelector("section");
+    sectionElement.removeChild(h3Element)
+
+    // Thay thế phần tử
+    const pElement = document.createElement("p");
+    pElement.innerHTML = "Xin chào tháng 7"
+
+    const h3Element_2 = document.querySelector('.remove');
+    sectionElement.replaceChild(pElement, h3Element_2);
+    console.log(sectionElement);
+
+    function handleChangeTitle() {
+        const newTitle = prompt("Nhập 1 Title: ");
+        document.title = newTitle;
+    }
+</script>
+
+</html>

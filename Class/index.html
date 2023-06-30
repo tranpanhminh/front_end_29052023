@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 21: DOM & Event</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .item-li {
+        padding: 10px;
+        font-weight: 700;
+    }
+
+    .item-li:hover {
+        background-color: orange;
+        color: white;
+    }
+
+    .red-text {
+        color: red
+    }
+
+    a {
+        color: inherit;
+    }
+
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+    }
+
+    .switch {
+        display: none;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Session 21: DOM & Event</h1>
+    </header>
+    <button onclick="handleMenu()">Menu</button>
+    <nav class="switch">
+        <ul>
+            <li class="red-text"><a href="#">Home</a></li>
+            <li class="red-text"><a href="#">About</a></li>
+            <li><a href="/product">Product</a></li>
+            <li><a href="/news">News</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="part-1" class="item">
+            <h3>DOM</h3>
+            <p>Hello Javascript</p>
+            <p>Rikkei Academy</p>
+            <p>Hello JS230529</p>
+        </section>
+        <section id="part-2" class="item">
+            <h3>EVENT</h3>
+            <p>Hello Javascript 2</p>
+            <p>Rikkei Academy 2</p>
+        </section>
+        <section id="part-3" class="item">
+            <h3>Ví dụ</h3>
+        </section>
+        <section>
+            <h3>Danh sách học sinh</h3>
+            <ul>
+                <li>Nguyễn Văn A</li>
+                <li>Nguyễn Văn B</li>
+                <li>Nguyễn Văn C</li>
+                <li>Nguyễn Văn D</li>
+            </ul>
+        </section>
+
+        <button onclick="handleToggle()">Toggle</button>
+        <div class="box" id="box-toggle"></div>
+    </main>
+</body>
+
+<script>
+    // Cách 1: Truy vấn tới ID
+    const sectionPart_1Element = document.getElementById("part-1");
+    console.log("Kiểm tra Section Part 1: ", sectionPart_1Element);
+
+    // Cách 2: Truy vấn tới Tag Name
+    const sectionTagName = document.getElementsByTagName("section");
+    console.log("Kiểm tra Section: ", sectionTagName);
+    const h3Section = sectionPart_1Element.getElementsByTagName("h3");
+    console.log("Kiểm tra h3: ", h3Section)
+
+    // Cách 3: Truy vấn tới Class Name
+    const itemClassName = document.getElementsByClassName('item');
+    console.log("Kiểm tra Item: ", itemClassName)
+
+    // for để lặp qua từng phần tử
+    for (let i = 0; i < itemClassName.length; i++) {
+        console.log("KIểm tra Class thứ: ", i, itemClassName[i]);
+    }
+
+    // Cách 4: Truy vấn bằng QuerySelector --> ID, Class, TagName
+    const sectionEvent = document.querySelector("#part-1");
+    console.log("Kiểm tra thông tin section event: ", sectionEvent);
+
+    // Cách 5: Dùng QuerySelectorAll để truy vấn toàn bộ
+    const pElements = document.querySelectorAll('#part-1 p');
+    console.log("Kiểm tra p trong Section: ", pElements);
+    pElements.forEach(element => {
+        console.log("Các thẻ p: ", element)
+    })
+
+    // hoặc
+
+    pElements.forEach(function (element) {
+        console.log("Các thẻ p 2: ", element)
+    })
+
+    // Truy vấn tới các thẻ li
+    const ul = document.querySelector('nav ul');
+    const liElements = document.querySelectorAll("nav li");
+    console.log(liElements)
+
+    // Thay đổi CSS của ul
+    ul.style.display = "flex";
+    ul.style.listStyleType = "none";
+    ul.style.justifyContent = "space-between"
+
+    // Thêm Class vào trong từng thẻ li
+    liElements.forEach((li) => {
+        li.classList.add("item-li");
+        // li.className = "item-li" // Thay đổi hoàn toàn class
+        li.setAttribute("data", "JS230529");
+        li.setAttribute("onclick", "handleClick()"); // set thuộc tính mới hoặc set function (onchange, onclick...)
+        console.log(li.getAttribute("data"));
+        console.log("Kiểm tra ClassList: ", li.classList)
+    });
+
+    // Dùng getAttribute khi muốn lấy thông tin các thuộc tính đã setAttribute
+
+    // HandleClick()
+    function handleClick() {
+        alert("Hello World");
+    }
+
+    function handleToggle() {
+        const boxElement = document.querySelector("#box-toggle")
+        boxElement.classList.toggle("box")
+    }
+
+    // <-----------------------> //
+    // Bài tập 1: Truy vấn tới từng thẻ li bằng cách khác nhau
+
+    // let listItem = document.querySelectorAll('li')
+    // console.log("Các thẻ li: ", listItem)
+    // listItem.forEach((item) => {
+    //     console.log("List Item là: ", item)
+    // });
+
+
+    // Bài tập 2: Truy vấn toàn bộ thẻ li trong nav
+
+    // let navElement = document.querySelector("nav");;
+    // let theLiElements = navElement.querySelectorAll("li");
+    // console.log("Các thẻ li trong Nav: ", theLiElements)
+    // theLiElements.forEach((li) => {
+    //     console.log("List thẻ li là:", li);
+    // });
+
+    // Bài tập 3: Bật tắt thanh menu
+    function handleMenu() {
+        let menuElement = document.querySelector("nav");
+        menuElement.classList.toggle("switch");
+        menuElement.classList.add("vip-2")
+        menuElement.classList.add("vip")
+    }
+</script>
+
+</html>

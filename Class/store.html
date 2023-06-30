@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rikkei Academy Store</title>
+    <link rel="stylesheet" href="../Class/assets/css/store.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Chào mừng đến với Rikkei Academy Store</h1>
+    </header>
+
+    <main>
+        <section>
+            <h3>Rikkei Store</h3>
+
+            <form>
+                <h3>Thêm sản phẩm mới</h3>
+                <div class="input-group">
+                    <input type="text" placeholder="Nhập url sản phẩm" onchange="handleChange(this)" name="imageUrl" />
+                    <input type="text" placeholder="Nhập tên sản phẩm" oninput="handleInput(this)" name="name" />
+                    <input type="text" placeholder="Nhập giá bán" name="price" />
+                    <input type="text" placeholder="Nhập số lượng" name="quantity" />
+                </div>
+                <input type="submit" value="Add" />
+            </form>
+            <div id="render-products">
+                <div class="product">
+                    <div class="product-img">
+                        <img src="https://cdn.pixabay.com/photo/2016/12/06/18/27/cereal-1887237_1280.jpg" alt="" />
+                    </div>
+                    <div class="product-content">
+                        <h4 class="product-name">Sữa đậu nành</h4>
+                        <p class="product-price">50.000</p>
+                        <p class="product-quantity">100</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Xin chào khách hàng A</h3>
+            <div id="render-cart"></div>
+        </section>
+    </main>
+</body>
+<script src="../Class/assets/js/store.js"></script>
+
+</html>
