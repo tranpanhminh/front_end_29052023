@@ -84,4 +84,120 @@ function handleEditProductToStore() {
     ".form-edit-product-to-store"
   );
   showFormEditProductToStore.style.display = "block";
+
+  dropList();
+}
+
+function dropList() {
+  let dropListElement = document.querySelector(".drop-list-product");
+  let dropListContent = "";
+  dropListContent = `<option value="">---Hãy chọn sản phẩm bạn muốn sửa---</option>`;
+  for (let product of products) {
+    dropListContent += `<option value="${product.name}">${product.name}</option>`;
+  }
+
+  dropListElement.innerHTML = dropListContent;
+}
+
+function onChangeDropList() {
+  let optionValue = document.querySelector(".drop-list-product").value;
+  console.log(optionValue);
+
+  let oldProductID = document.querySelector("#product-id").value;
+  let oldImageUrl = document.querySelector("#old-image-url").value;
+  let oldProductName = document.querySelector("#old-product-name").value;
+  let oldProductQuantity = document.querySelector(
+    "#old-product-quantity"
+  ).value;
+
+  for (let i = 0; i < products.length; i++) {
+    if (optionValue == products[i].name) {
+      oldProductID = i + 1;
+      console.log("ID là: ", oldProductID);
+
+      oldImageUrl = products[i].image;
+      console.log("Image là: ", oldImageUrl);
+
+      oldProductName = products[i].name;
+      console.log("Product Name là: ", oldProductName);
+
+      oldProductQuantity = products[i].quantity;
+      console.log("Quantity là: ", oldProductQuantity);
+    }
+  }
+
+  document.querySelector("#product-id").value = oldProductID;
+  document.querySelector("#old-image-url").value = oldImageUrl;
+  document.querySelector("#old-product-name").value = oldProductName;
+  document.querySelector("#old-product-quantity").value = oldProductQuantity;
+}
+
+function updateProduct() {
+  let indexValue = document.querySelector("#product-id").value;
+  let updateImageUrl = document.querySelector("#update-image-url").value;
+  let updateProductName = document.querySelector("#update-product-name").value;
+  let updateProductQuantity = document.querySelector(
+    "#update-product-quantity"
+  ).value;
+
+  for (let i = 0; i < products.length; i++) {
+    if (updateImageUrl === "") {
+      updateImageUrl = products[indexValue - 1].image;
+    }
+    if (updateProductName === "") {
+      updateProductName = products[indexValue - 1].name;
+    }
+    if (updateProductQuantity === "") {
+      updateProductQuantity = products[indexValue - 1].quantity;
+    }
+  }
+
+  let updateProduct = {
+    image: updateImageUrl,
+    name: updateProductName,
+    quantity: updateProductQuantity,
+  };
+
+  if (indexValue !== "") {
+    products.splice(indexValue - 1, 1, updateProduct);
+  }
+  renderStore(products);
+}
+
+function dropListDeleteProduct() {
+  let dropListDeleteElement = document.querySelector(
+    ".drop-list-delete-product"
+  );
+  let dropListDeleteContent = "";
+  dropListDeleteContent = `<option value="">---Hãy chọn sản phẩm bạn muốn sửa---</option>`;
+  for (let product of products) {
+    dropListDeleteContent += `<option value="${product.name}">${product.name}</option>`;
+  }
+
+  dropListDeleteElement.innerHTML = dropListDeleteContent;
+}
+
+function deleteProduct() {
+  let showFormDeleteProduct = document.querySelector(
+    ".form-delete-product-to-store"
+  );
+  showFormDeleteProduct.style.display = "block";
+
+  dropListDeleteProduct();
+}
+
+function onDeleteDropList() {
+  let optionValue = document.querySelector(".drop-list-delete-product").value;
+  console.log(optionValue);
+  for (i = 0; i < products.length; i++) {
+    if (optionValue === products[i].name) {
+      products.splice(i, 1);
+    }
+  }
+}
+
+function deleteProductToStore() {
+  onDeleteDropList();
+  dropListDeleteProduct();
+  renderStore(products);
 }
