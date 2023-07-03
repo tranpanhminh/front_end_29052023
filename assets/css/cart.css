@@ -35,6 +35,11 @@ h4 {
 
 .group-btn-store {
     text-align: center;
+    display: none;
+}
+
+.group-account-bar {
+    text-align: center;
 }
 
 .add-btn {
@@ -104,8 +109,57 @@ h4 {
     margin-top: 10px;
 }
 
+.login-product-btn {
+    background-color: #1859c9;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signup-product-btn {
+    background-color: #09aeae;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.logout-product-btn {
+    background-color: #09aeae;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    display: none;
+}
+
 .add-product-to-store {
     background-color: #eb961f;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.close-add-product-to-store {
+    background-color: red;
     border: none;
     padding: 10px;
     font-size: 15px;
@@ -129,8 +183,35 @@ h4 {
     width: 100%;
 }
 
-.delete-product-to-store {
+.close-update-product-to-store {
     background-color: red;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    float: right;
+}
+
+.close-delete-product-to-store {
+    background-color: red;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.delete-product-to-store {
+    background-color: #d72503;
     border: none;
     padding: 10px;
     font-size: 15px;

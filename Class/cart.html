@@ -12,6 +12,12 @@
     <h3>
         CỬA HÀNG
     </h3>
+    <div class="group-account-bar">
+        <button class="login-product-btn" onclick="handleLogin()">Login</button>
+        <button class="signup-product-btn" onclick="handleSignup()">Signup</button>
+        <button class="logout-product-btn" onclick="handleLogOut()">Logout</button>
+    </div>
+    <br>
     <div class="group-btn-store">
         <button class="add-product-btn" onclick="handleAddProductToStore()">Thêm sản phẩm</button>
         <button class="edit-product-btn" onclick="handleEditProductToStore()">Chỉnh sửa sản phẩm</button>
@@ -32,6 +38,7 @@
             <input type="number" placeholder="" id="input-product-quantity" min="0">
         </div>
         <button class="add-product-to-store" onclick="uploadProduct()">Add Product To Store</button>
+        <button class="close-add-product-to-store" onclick="closeAddProductForm()">Close</button>
     </div>
 
     <div class="form-edit-product-to-store">
@@ -59,6 +66,7 @@
             <input type="number" placeholder="" id="update-product-quantity" min="0">
         </div>
         <button class="update-product-to-store" onclick="updateProduct()">Update Product To Store</button>
+        <button class="close-update-product-to-store" onclick="closeUpdateProduct()">Close</button>
     </div>
 
     <div class="form-delete-product-to-store">
@@ -67,12 +75,13 @@
         <select name="" id="" class="drop-list-delete-product" onchange="onDeleteDropList()">
         </select>
         <button class="delete-product-to-store" onclick="deleteProductToStore()">Delete Product</button>
+        <button class="close-delete-product-to-store" onclick="closeDeleteProductToStore()">Close</button>
     </div>
 
     <div class="store-container">
     </div>
     <h3>
-        Giỏ hàng
+        GIỎ HÀNG
     </h3>
     <div class="line"></div>
     <div class="cart-container">
