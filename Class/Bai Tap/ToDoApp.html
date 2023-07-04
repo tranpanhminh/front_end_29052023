@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD kết hợp JQUERY</title>
+
+    <style>
+        .container {
+            width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table,
+        tr,
+        td {
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 2px solid grey;
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        button {
+            border: none;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 700;
+            background-color: #00bfff;
+        }
+
+        tr button:nth-child(1) {
+            background-color: orange;
+        }
+
+        tr button:nth-child(2) {
+            background-color: rgb(136, 20, 20);
+        }
+
+        tr button:nth-child(3) {
+            background-color: rgb(0, 255, 123);
+        }
+
+        thead tr td {
+            text-align: center;
+            font-weight: 900;
+        }
+
+        #notify {
+            padding: 20px;
+            max-width: 300;
+            min-width: 200px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50px;
+            right: 30px;
+            background-color: rgb(3, 200, 249);
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="notify"></div>
+    <div class="container">
+        <h1>To do App</h1>
+        <div class="input-group">
+            <input type="text" name="" id="" />
+            <button onclick="handleAdd()" id="add-edit">ADD</button>
+        </div>
+
+        <table cellpadding="10">
+            <thead>
+                <tr>
+                    <td>No</td>
+                    <td>To do item</td>
+                    <td>Status</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>working</td>
+                    <td>true</td>
+                    <td>
+                        <button>EDIT</button> <button>DELETE</button>
+                        <button>DELETE</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+<script>
+    const data = [
+        { id: 1, content: "go to officel", status: false },
+        { id: 2, content: "go to market", status: false },
+        { id: 3, content: "go to fitness", status: false },
+        { id: 4, content: "play soccer", status: false },
+    ];
+
+    const dataDB = JSON.parse(localStorage.getItem("todos"));
+    if (!dataDB) {
+        localStorage.setItem("todos", JSON.stringify(data));
+    }
+
+    renderData();
+    $("#notify").hide();
+
+    function renderData() {
+        const data = getDataLocal();
+        let contentHTML = "";
+        data.forEach((todo, index) => {
+            contentHTML += `<tr>
+            <td>${index + 1}</td>
+            <td>${todo.content}</td>
+            <td>${todo.status ? "Done" : "Not finish"}</td>
+            <td>
+              <button onclick="handleEdit(${todo.id
+                })">EDIT</button> <button onclick="handleDelete(${todo.id
+                })">DELETE</button>
+              <button onclick="handleFinish(${todo.id})">Finish</button>
+            </td>
+          </tr>`;
+        });
+        $("tbody").html(contentHTML);
+    }
+
+    // ADD
+
+    function handleAdd() {
+        const value = $("input").val();
+        //   lấy dữ liệu local
+
+        const dataDB = getDataLocal();
+
+        //   Tạo 1 todo
+        const newTodo = {
+            id: dataDB[dataDB.length - 1].id + 1,
+            content: value,
+            status: false,
+        };
+        $("input").val("");
+        dataDB.push(newTodo);
+        localStorage.setItem("todos", JSON.stringify(dataDB));
+        notify("Đã thêm nhiệm vụ thành công");
+        renderData();
+    }
+
+    function handleEdit(id) {
+        const dataDB = getDataLocal();
+        const todo = dataDB.find((item) => item.id == id);
+
+        $("input").val(todo?.content);
+
+        //   Sửa add thành update --> truyền id
+
+        $("#add-edit").text("UPDATE");
+
+        $("#add-edit").attr("onclick", `handleUpdate(${id})`);
+    }
+
+    function handleUpdate(id) {
+        const data = getDataLocal();
+        const index = data.findIndex((item) => item.id === id);
+        data[index].content = $("input").val();
+
+        localStorage.setItem("todos", JSON.stringify(data));
+        notify("update thành công");
+        renderData();
+        $("input").val("");
+    }
+
+    function handleDelete(id) {
+        const data = getDataLocal();
+        const index = data.findIndex((item) => item.id === id);
+        console.log(111, id, index);
+        //   Xóa dữ liệu
+        data.splice(index, 1);
+        notify("Xóa thành công");
+        // Đưa lại lên localStorage
+
+        localStorage.setItem("todos", JSON.stringify(data));
+
+        renderData();
+    }
+    function getDataLocal() {
+        const data = JSON.parse(localStorage.getItem("todos"));
+        return data || [];
+    }
+
+    function handleFinish(id) {
+        const data = getDataLocal();
+        const index = data.findIndex((item) => item.id === id);
+        data[index].status = true;
+
+        // Đưa lại lên localStorage
+        localStorage.setItem("todos", JSON.stringify(data));
+        notify("Nhiệm vụ đã hoàn thành");
+        renderData();
+    }
+    // Sử dụng Jquery
+    function notify(content, type = "black") {
+        //
+        $("#notify").text(content);
+        $("#notify").css("color", type);
+
+        $("#notify").fadeToggle(100, () => {
+            $("#notify").fadeToggle(3000);
+        });
+    }
+</script>
+
+</html>

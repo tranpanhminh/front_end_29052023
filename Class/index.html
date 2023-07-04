@@ -7,9 +7,90 @@
     <title>Session 23: JQuery</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    body {
+        height: 3000px;
+    }
+
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: orange;
+    }
+
+    #notify {
+        background-color: #24cfee;
+        width: 200px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50px;
+        right: 20px;
+    }
+
+    #change-box {
+        background-color: red;
+    }
+</style>
 
 <body>
+    <header>
+        <h1>Session 23: JQuery</h1>
+    </header>
+    <main>
+        <fieldset>
+            <legend>Ví dụ 1: </legend>
+            <h3>Ví dụ Selector và Event của JQuery</h3>
+            <button onclick="bai_01_cach_01()" id="btn-01">Cách 1</button>
+            <button onclick="bai_01_cach_02()" id="btn-02">Cách 2</button>
 
+            <button id="btn-toggle">Click to toggle</button>
+            <p id="result-01">Rikkei Academy Đà Nẵng</p>
+
+            <input type="text" id="input-01">
+            <p id="result-01-1">Hello World</p>
+            <input type="text" id="input-02">
+            <br>
+            <br>
+            <button id="toggle-box">Toggle Box</button>
+            <br>
+            <br>
+            <div class="box" id="box"></div>
+        </fieldset>
+        <fieldset>
+            <legend>Ví dụ 2: </legend>
+            <h3>Ví dụ hiệu ứng</h3>
+            <button id="btn-03">Thông báo</button>
+            <p id="notify">Hoàn thành</p>
+            <p id="change-box"></p>
+
+        </fieldset>
+    </main>
 </body>
+<script src="./js/index.js"></script>
 
 </html>

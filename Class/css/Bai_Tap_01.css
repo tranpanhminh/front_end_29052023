@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.group-to-do-app {
+    width: 800px;
+    margin: 0 auto;
+    line-height: 3.5;
+}
+
+.group-enter-task {
+    width: 300px;
+    margin: 0 auto;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px ridge #ccc;
+}
+
+.h2-title {
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 85%;
+}
+
+.add-btn {
+    background-color: #3b71ca;
+}
+
+.edit-btn {
+    background-color: #e4a11b;
+}
+
+.delete-btn {
+    background-color: #dc4c64;
+}
+
+.finished-btn {
+    background-color: #14a44d;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px 20px;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
