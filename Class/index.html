@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<header>
+    <h1>Storing data in the browser</h1>
+</header>
+
+<body>
+
+</body>
+<script>
+    // Local Storage --> Xóa bằng thao tấc trên trình duyệt hay JS
+
+    // 1. Lấy dữ liệu về --> localStorage.getItem(key): --> Kiểu dữ liệu là JSON --> Kết hợp với JSON.parse()
+    // 2. Đưa dữ liệu lên LocalStorage --> localStorage.setItem(key,value) --> value --> JSON --> JSON.stringify(value)
+    // 3. localStorage.removeItem(key) : Xóa dữ liệu theo Key
+    // 4. localStorage.clear() : Xóa toàn bộ dữ liệu trong localStorage
+
+    // Bài tập làm việc với localStorage
+    // Lấy dữ liệu từ localStorage xuống
+
+    const userLogin = {
+        email: "anhminh@gmail.com",
+        isAdmin: false,
+        username: "anhminh"
+    };
+
+    const user = localStorage.getItem("userLogin");
+    console.log("Kiểm tra User getItem: ", user);
+
+    const userParse = JSON.parse(user);
+    console.log("Kiểm tra UserParse: ", userParse);
+
+    // Đưa dữ liệu lên LocalStorage
+
+    const userConvertJSON = JSON.stringify(userLogin);
+    localStorage.setItem("userLogin", userConvertJSON);
+
+    // localStorage.removeItem("userLogin")
+
+
+
+    // Session Storage --> Xóa bằng thao tác trên trình duyệt, js và khi đóng trình duyệt
+
+</script>
+
+</html>

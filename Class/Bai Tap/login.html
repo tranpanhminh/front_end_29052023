@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 100px auto;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: rgb(129, 220, 238);
+        }
+
+        input {
+            outline: none;
+        }
+
+        form .title {
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group>* {
+            width: 100%;
+        }
+
+        .input-group input {
+            height: 30px;
+            width: 100%;
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            height: 30px;
+            cursor: pointer;
+            background-color: rgb(41, 131, 233);
+            border: none;
+        }
+
+        .eye-group {
+            position: relative;
+        }
+
+        .eye {
+            position: absolute;
+            top: 20%;
+            right: 10px;
+        }
+
+        .error {
+            color: red;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h2 class="title">Login</h2>
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" required />
+            <p class="error" id="error-email"></p>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <div class="eye-group">
+                <input type="password" id="password" />
+
+                <i class="fa-solid fa-eye eye"></i>
+            </div>
+
+            <p class="error" id="error-password"></p>
+        </div>
+
+        <input type="submit" value="Login" />
+    </form>
+</body>
+
+<script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+    });
+
+    function handleSubmit() {
+        // B1: Lấy dữ liệu từ form
+
+        const userForm = getDataForm();
+        // B2: Lấy dữ liệu từ local
+
+        const accountDB = getDataLocal();
+        // B3: Kiểm duyệt dữ liệu
+
+        const userLogin = accountDB.find(
+            (user) =>
+                user.email === userForm.email && user.password === userForm.password
+        );
+        // --> nếu đúng: lưu thông tin userLogin lên localStorage (delete password), điều hướng sang path mong muốn
+        // --> Nếu sai: thông báo người dùng sai email, mật khẩu
+        if (userLogin) {
+            delete userLogin.password;
+            localStorage.setItem("userLogin", JSON.stringify(userLogin));
+            window.location = "/user.html";
+        } else {
+            alert("Email hoặc mật khẩu bị sai");
+        }
+    }
+
+    function getDataForm() {
+        return {
+            email: "",
+            password: "",
+        };
+    }
+
+    function getDataLocal() {
+        return [];
+    }
+</script>
+
+</html>

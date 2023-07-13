@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #4070f4;
+}
+
+.form-signup,
+.form-login {
+    margin: 0 auto;
+    padding: 30px 50px;
+    margin-top: 50px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-title,
+.login-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+input {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 10px;
+    border: 1px ridge #ccc;
+    border-radius: 5px;
+}
+
+.signup-button,
+.login-button {
+    width: 100%;
+    background-color: #0171d3;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.signup-button:hover,
+.login-button:hover {
+    opacity: 75%;
+}
+
+.login-sentence,
+.signup-sentence {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.login-text,
+.signup-text {
+    text-decoration: none;
+}
+
+.login-text:hover,
+.signup-text:hover,
+.forgot-password-text:hover {
+    opacity: 70%;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.forgot-password-text {
+    text-decoration: none;
+}

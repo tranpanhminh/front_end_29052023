@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    legend {
+        background-color: yellow;
+        border: 1px solid black;
+        color: black;
+        padding: 10px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    td {
+        white-space: nowrap;
+    }
+
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>Bài 1: </legend>
+        <h3>Đăng ký người dùng. Nhấn đăng ký => prompt => Email, username, password => Accounts</h3>
+        <button onclick="bai_01()">Run</button>
+        <button onclick="getUserAccount()">Lấy dữ liệu về</button>
+        <button onclick="deleteData()">Xóa dữ liệu trên Local Storage</button>
+        <button onclick="deleteAllData()">Clear hết dữ liệu Local Storage</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Bài 2: </legend>
+        <h3>Ví dụ về Session</h3>
+        <button onclick="bai_02()">Click Session Storage</button>
+        <button onclick="getDataSession()">Lấy dữ liệu về Session Storage</button>
+        <button onclick="deleteDataSession()">Xóa dữ liệu trên Session Storage</button>
+        <button onclick="deleteAllDataSession()">Clear hết dữ liệu Session Storage</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Bài 3: </legend>
+        <h3>Bài tập thêm</h3>
+        <input type="text" placeholder="Nhập vào User">
+        <button onclick="bai_03_add_user()">Thêm User</button>
+        <button onclick="bai_03_delete_user()">Xóa User</button>
+        <div class="result-03"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Bài 4: </legend>
+        <h3>Ví dụ về Cookie</h3>
+        <input type="text" placeholder="Nhập vào User">
+        <button onclick="bai_04_get_cookie()">Lấy thông tin Cookie</button>
+        <button onclick="bai_04_set_cookie()">Set thông tin Cookie</button>
+        <div class="result-04"></div>
+    </fieldset>
+</body>
+<script src="../Class/js/vi_du.js"></script>
+
+</html>

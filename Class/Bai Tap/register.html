@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    form {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 100px auto;
+        padding: 30px;
+        border-radius: 8px;
+        background-color: rgb(129, 220, 238);
+    }
+
+    input {
+        outline: none;
+    }
+
+    form .title {
+        text-align: center;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .input-group>* {
+        width: 100%;
+    }
+
+    .input-group input {
+        height: 30px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        height: 30px;
+        cursor: pointer;
+        background-color: rgb(41, 131, 233);
+        border: none;
+    }
+
+    .eye-group {
+        position: relative;
+    }
+
+    .eye {
+        position: absolute;
+        top: 20%;
+        right: 10px;
+    }
+
+    .error {
+        color: red;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <form action="/login.html">
+        <h2 class="title">Register</h2>
+
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" required />
+            <p class="error" id="error-email"></p>
+        </div>
+        <div class="input-group">
+            <label for="user-name">User name</label>
+
+            <input type="text" id="user-name" required />
+
+            <p class="error" id="error-user-name"></p>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <div class="eye-group">
+                <input type="password" id="password" />
+
+                <i class="fa-solid fa-eye eye"></i>
+            </div>
+
+            <p class="error" id="error-password"></p>
+        </div>
+        <div class="input-group">
+            <label for="repeat-password">Repeat password</label>
+            <div class="eye-group">
+                <input type="password" id="repeat-password" />
+                <i class="fa-solid fa-eye-slash eye"></i>
+            </div>
+            <p class="error" id="error-repeat-password"></p>
+        </div>
+
+        <input type="submit" value="Register" />
+    </form>
+    <script>
+        // Khi submit
+
+        const formElement = document.querySelector("form");
+        formElement.addEventListener("submit", (e) => {
+            // chặn action // thấy được console.log
+
+            handleSubmit(e);
+        });
+
+        function handleSubmit(event) {
+            // B1: Lấy dữ liệu từ local --> hoặc là có, hoặc là không -->
+
+            const accountDB = getDataLocal(); // có dữ liệu bắt buộc phải array
+
+            // B2: Lấy dữ liệu từ form và validator
+
+            const userRegister = getDataForm(); // ==> 1 đối tượng chứa thông tin từ form || undefinded
+            if (!userRegister) {
+                event.preventDefault();
+                return;
+            }
+
+            // B3: Kiểm duyệt trùng lặp với localStorage
+            //   Vòng lặp lặp qua accountDB để kiểm duyệt
+
+            for (let i = 0; i < accountDB.length; i++) {
+                // Kiểm tra từng phần tử trong accountDB với userRegister
+                if (userRegister.email === accountDB[i].email) {
+                    alert(
+                        "Email đã tồn tại, vui lòng đăng nhập hoặc đăng ký email mới"
+                    );
+                    event.preventDefault();
+                    return;
+                }
+            }
+
+            // Nếu email mới --> push vào array
+            accountDB.push(userRegister);
+
+            // B4: Đấy dữ liệu lên local theo điều kiện
+
+            localStorage.setItem("accounts", JSON.stringify(accountDB));
+        }
+
+        function getDataForm() {
+            const emailElement = document.querySelector("#email");
+            const userNameElement = document.querySelector("#user-name");
+            const passwordElement = document.querySelector("#password");
+            const repeatPasswordElement =
+                document.querySelector("#repeat-password");
+
+            // Lấy value
+
+            const emailValue = emailElement.value.toLowerCase().trim(); // --> chuyển email thành in thường + xóa bỏ space 2 bên
+            const userName = userNameElement.value;
+            const password = passwordElement.value;
+            const repeatPasswordValue = repeatPasswordElement.value;
+            const user = {
+                email: emailValue,
+                username: userName,
+                password: password,
+                repeatPassword: repeatPasswordValue,
+            };
+
+            const error = checkValidator(user);
+            renderError(error);
+            if (!error.isError) {
+                delete user.repeatPassword;
+                return user;
+            }
+        }
+
+        function getDataLocal() {
+            // Lấy dữ liệu từ localStorage
+
+            const data = localStorage.getItem("accounts"); //kiểu dữ liệu đang là JSON
+            const parseData = JSON.parse(data); //kiểu dữ liệu đã gửi lên array, object,...// trường hợp này là array nếu đã set
+            return parseData || [];
+        }
+
+        function checkValidator(user) {
+            console.log("Kiểm tra user", user);
+            const error = {
+                isError: false,
+                emailMessage: "",
+                passwordMessage: "",
+                repeatPasswordMessage: "",
+            };
+            if (user.password.length < 8) {
+                error.isError = true;
+                error.passwordMessage = "Password không được ít hơn 8 ký tự";
+            }
+            if (user.repeatPassword !== user.password) {
+                error.isError = true;
+                error.repeatPasswordMessage = "Mật khẩu không trùng khớp";
+            }
+
+            console.log(error, 1111);
+            return error;
+        }
+
+        function renderError(error) {
+            const passwordError = document.querySelector("#error-password");
+            const repeatPasswordError = document.querySelector(
+                "#error-repeat-password"
+            );
+            passwordError.innerHTML = error.passwordMessage;
+            repeatPasswordError.innerHTML = error.repeatPasswordMessage;
+        }
+    </script>
+</body>
+
+</html>
